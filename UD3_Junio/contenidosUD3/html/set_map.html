@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='author' content='Virginia Ordoño Bernier'>
+    <meta name='statement'
+        content='Entrega en este repositorio las siguientes actividades. Utiliza tanto html como su demostración en consola.'>
+    <title>Tarea 3.5. Listado Set, Map, WeakSet, WeakMap</title>
+    <script src="../js/set_map.js"></script>
+</head>
+<style>
+    * {
+        background-color: beige;
+    }
+
+    header {
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, Courier, monospace;
+        font-size: xx-large;
+        margin: 40px;
+    }
+
+    li.question {
+        font-weight: bold;
+    }
+
+    span {
+        color: chocolate;
+        font-weight: bold;
+    }
+
+    span.comment {
+        color: darkgreen;
+    }
+
+    p.img {
+        font-weight: bold;
+    }
+
+    pre {
+        border-color: green;
+        border-style: solid;
+        border-radius: 5px;
+        padding-bottom: 10px;
+        width: 450px;
+    }
+</style>
+
+<body>
+    <noscript>
+        <p>Bienvenido a Mi Sitio</p>
+        <p>La página que estás viendo requiere para su funcionamiento el uso de JavaScript.
+            Si lo has deshabilitado intencionadamente, por favor vuelve a activarlo.</p>
+    </noscript>
+    <header>Tarea 3.5. Listado Set, Map, WeakSet, WeakMap</header>
+    
+    
+    <ul>
+        <!--Pregunta 1-->
+        <li class="question">1. Indica qué es un <i>Set</i> y crea uno partiendo del array [1, 2, 3, 4, 4]. Justifica su
+            tamaño. </li><br>
+        <ul>
+            <li type="disc">Colección que permite almacenar valores únicos de cualquier tipo, desde valores primitivos
+                hasta referencias a objetos. </li>
+            <li type="disc">Se puede iterar sobre estos elementos en orden de inserción.</li>
+            <li type="disc">Los valores en <i>Set</i> solo pueden aparecer una vez.</li>
+        </ul><br>
+            
+        <label>Inserción de un <i>Array</i> en una colección <i>Set</i>. </label>
+    
+        <pre><code class="language-javascript">
+    <span class="comment">//Declaramos el array</span>
+    let aNumbers = [1,2,3,4,4];
+    <!--Crea set-->
+    <span class="comment">//Función que crea un Set a partir de un Array</span>
+    function createSet(array) {
+    let mySet = new Set(array);
+    return mySet;
+    }
+    <!--Llamada-->
+    <span class="comment">//Llamada a la función</span>
+    console.log(createSet(aNumbers));
+    <!--Ejecutar-->
+    <button type="submit" name="buttonEx1a" id="buttonEx1a">Ejecutar</button><span id='resultEx1a'></span>
+    <!--Limpiar-->
+    <button type="reset" name="buttonEx1a" id="resetEx1a">Limpiar</button><span id='resetEx1a'></span>
+        </code></pre>
+            <!--Tamaño set-->
+        <pre><code class="language-javascript">
+    <span class="comment">//Comprobamos longitud</span>
+    function getSetSize(param){
+    return param.size;
+    }
+    <!--Llamada-->
+    <span class="comment">//Llamada a la función</span>
+    console.log(getSetSize(createSet(aNumbers)));
+    <!--Ejecutar-->
+    <button type="submit" name="buttonEx1b" id="buttonEx1b">Ejecutar</button><span id='resultEx1b'></span>
+    <!--Limpiar-->
+    <button type="reset" name="buttonEx1b" id="resetEx1b">Limpiar</button><span id='resetEx1b'></span>
+        </code></pre>
+    
+        <!--Pregunta 2-->
+        <br><br>
+        <li class="question"> 2. Justifica por qué funciona el encadenamiento en los métodos de <i>Set</i> <span>new Set().add(11).add(22)</span>.</li><br>
+        <ul>
+            <li type="disc">Porque es un método que agrega un nuevo elemento al final del Set. </li>
+        </ul><br>
+        <label>Métodos de encadenamiento. </label>
+    
+        <pre><code class="language-javascript">
+    <!--Set.add()-->
+    <span class="comment">//Uso del método Set.add()</span>
+    let setConcat = new Set().add(11).add(22);
+    console.log(setConcat);
+    <!--Ejecutar-->
+    <button type="submit" name="buttonEx2" id="buttonEx2">Ejecutar</button><span id='resultEx2'></span>
+    <!--Limpiar-->
+    <button type="reset" name="buttonEx2" id="resetEx2">Limpiar</button><span id='resetEx2'></span>
+        </code></pre>
+
+        <!--Pregunta 3-->
+        <br><br>
+        <li class="question"> 3. Indica cómo se devuelve un valor de un <i>Set</i>.</li>
+        <br>
+        <ul>
+            <li type="disc"><span>Set.entries()</span>. Devuelve un nuevo objeto de tipo <i>Iterator</i> que contiene un
+            array de tuplas [value, value] por cada elemento en el <i>Set</i> original, manteniendo el orden de
+            inserción. </span></li>
+        </ul>
+
+        <pre><code class="language-javascript">
+    <!--Crea Set.entries()-->
+    <span class="comment">//Set.entries()</span>
+    let setValues = new Set([1,2,3,4,5,6]);
+    console.log(setValues.entries());
+    <!--Ejecutar-->
+    <button type="submit" name="buttonEx3a" id="buttonEx3a">Ejecutar</button><span id='resultEx3a'></span>
+    <!--Limpiar-->
+    <button type="reset" name="buttonEx3a" id="resetEx3a">Limpiar</button><span id='resetEx3a'></span>
+        </code></pre>
+
+        <!--set.valueof()-->
+        <br>
+        <ul>
+            <li type="disc"><span>Set.valueOf()</span>. Devuelve el valor primitivo del objeto especificado. </span></li>
+        </ul>
+
+        <pre><code class="language-javascript">
+    <!--Crea método-->
+    <span class="comment">//Set.valueOf()</span>
+    let setValues = new Set([1,2,3,4,5,6]);
+    console.log(setValues.valueOf());
+    <!--Ejecutar-->
+    <button type="submit" name="buttonEx3b" id="buttonEx3b">Ejecutar</button><span id='resultEx3b'></span>
+    <!--Limpiar-->
+    <button type="reset" name="buttonEx3b" id="resetEx3b">Limpiar</button><span id='resetEx3b'></span>
+        </code></pre>
+
+        <!--set.values()-->
+        <br>
+        <ul>
+            <li type="disc"><span>Set.values()</span>. Devuelve un array con los valores correspondientes a las propiedades enumerables de un objeto.</span></li>
+        </ul>
+
+        <pre><code class="language-javascript">
+    <!--Crea método-->
+    <span class="comment">//Set.values()</span>
+    let setValues = new Set([1,2,3,4,5,6]);
+    console.log(setValues.values());
+    <!--Ejecutar-->
+    <button type="submit" name="buttonEx3c" id="buttonEx3c">Ejecutar</button><span id='resultEx3c'></span>
+    <!--Limpiar-->
+    <button type="reset" name="buttonEx3c " id="resetEx3c">Limpiar</button><span id='resetEx3c'></span>
+        </code></pre>
+    
+    <!--set.keys()-->
+    <br>
+    <ul>
+        <li type="disc"><span>Set.keys()</span>. Devuelve los valores correspondientes.</span></li>
+    </ul>
+
+    <pre><code class="language-javascript">
+    <!--Crea método-->
+    <span class="comment">//Set.keys()</span>
+    let setValues = new Set([1,2,3,4,5,6]);
+    console.log(setValues.keys());
+    <!--Ejecutar-->
+    <button type="submit" name="buttonEx3d" id="buttonEx3d">Ejecutar</button><span id='resultEx3d'></span>
+    <!--Limpiar-->
+    <button type="reset" name="buttonEx3d " id="resetEx3d">Limpiar</button><span id='resetEx3d'></span>
+    </code></pre>
+
+ <!--Pregunta 4-->
+    <br>
+    <li class="question">4. Comparativa entre un Array y un Set:</li><br>
+    <ul>
+        <h3>Arrays</h3>
+            <li type="disc"><span>Busqueda de elementos.</span></li>
+    </ul>
+    <!--array.filter()-->
+    <br>
+    <ul>
+        <li type="disc"><span>Array.filter()</span>. Construye un nuevo array con todos los elementos que cumplen con una condición dada.</span></li>
+    </ul>
+
+
+<pre><code class="language-javascript">
+    <!--Crea método-->
+    <span class="comment">//Array.filter()</span>
+    let myArray = [1,2,3,4,5,6];
+    myArray.filter(element => element > 2)
+    console.log(myArray.filter());
+    <!--Ejecutar-->
+    <button type="submit" name="buttonEx4a" id="buttonEx4a">Ejecutar</button><span id='resultEx4a'></span>
+    <!--Limpiar-->
+    <button type="reset" name="buttonEx4a " id="resetEx4a">Limpiar</button><span id='resetEx4a'></span>
+    </code></pre>
+
+
+<!--array.find()-->
+<br>
+<ul>
+    <li type="disc"><span>Array.find()</span>. Devuelve el primer elemento que cumple con una condición dada.</span></li>
+</ul>
+
+<pre><code class="language-javascript">
+    <!--Crea método-->
+    <span class="comment">//Array.find()</span>
+    let myArray = [1,2,3,4,5,6];
+    myArray.filter(element => element > 2)
+    console.log(myArray.filter());
+    <!--Ejecutar-->
+    <button type="submit" name="buttonEx4b" id="buttonEx4b">Ejecutar</button><span id='resultEx4b'></span>
+    <!--Limpiar-->
+    <button type="reset" name="buttonEx4b" id="resetEx4b">Limpiar</button><span id='resetEx4b'></span>
+    </code></pre>
+
+<!--array.includes()-->
+<br>
+<ul>
+    <li type="disc"><span>Array.includes()</span>. Devuelve true o false si encuentra o no un elemento dado.</span></li>
+</ul>
+
+<pre><code class="language-javascript">
+    <!--Crea método-->
+    <span class="comment">//Array.includes()</span>
+    let myArray = [1,2,3,4,5,6];
+    myArray.includes(5);
+    console.log(myArray.includes(5));
+    <!--Ejecutar-->
+    <button type="submit" name="buttonEx4c" id="buttonEx4c">Ejecutar</button><span id='resultEx4c'></span>
+    <!--Limpiar-->
+    <button type="reset" name="buttonEx4c" id="resetEx4c">Limpiar</button><span id='resetEx4c'></span>
+    </code></pre>
+
+<!--array.at()-->
+<br>
+<ul>
+    <li type="disc"><span>Array.at()</span>. Devuelve un elemento dado un índice. Con índices negativos, empieza por el final de array.</span></li>
+</ul>
+
+<pre><code class="language-javascript">
+    <!--Crea método-->
+    <span class="comment">//Array.at()</span>
+    let myArray = [1,2,3,4,5,6];
+    myArray.at(-1);
+    console.log(myArray.at(-1));
+    <!--Ejecutar-->
+    <button type="submit" name="buttonEx4d" id="buttonEx4d">Ejecutar</button><span id='resultEx4d'></span>
+    <!--Limpiar-->
+    <button type="reset" name="buttonEx4d" id="resetEx4d">Limpiar</button><span id='resetEx4d'></span>
+    </code></pre>
+
+    <li type="disc"><span>Eliminación de elementos.</span>
+<!--array.pop()-->
+<br>
+<ul>
+    <li type="disc"><span>Array.pop()</span>. Elimina y devuelve el último elemento del array.</span></li>
+</ul>
+
+<pre><code class="language-javascript">
+    <!--Crea método-->
+    <span class="comment">//Array.pop()</span>
+    let myArray = [1,2,3,4,5,6];
+    myArray.pop();
+    console.log(myArray.pop());
+    <!--Ejecutar-->
+    <button type="submit" name="buttonEx4e" id="buttonEx4e">Ejecutar</button><span id='resultEx4e'></span>
+    <!--Limpiar-->
+    <button type="reset" name="buttonEx4e" id="resetEx4e">Limpiar</button><span id='resetEx4e'></span>
+    </code></pre>
+
+<!--array.shift()-->
+<br>
+<ul>
+    <li type="disc"><span>Array.shift()</span>. Elimina y devuelve el primer elemento del array.</span></li>
+</ul>
+
+<pre><code class="language-javascript">
+    <!--Crea método-->
+    <span class="comment">//Array.shift()</span>
+    let myArray = [1,2,3,4,5,6];
+    myArray.shift();
+    console.log(myArray.shift());
+    <!--Ejecutar-->
+    <button type="submit" name="buttonEx4f" id="buttonEx4f">Ejecutar</button><span id='resultEx4f'></span>
+    <!--Limpiar-->
+    <button type="reset" name="buttonEx4f" id="resetEx4f">Limpiar</button><span id='resetEx4f'></span>
+    </code></pre>
+
+<!--array.splice()-->
+<br>
+<ul>
+    <li type="disc"><span>Array.splice(index, elements)</span>. Cambia el contenido de un array eliminando elementos existentes y/o agregando nuevos elementos.</span></li>
+</ul>
+
+<pre><code class="language-javascript">
+    <!--Crea método-->
+    <span class="comment">//Array.splice()</span>
+    let myArray = [1,2,3,4,5,6];
+    myArray.splice(0,2);
+    console.log(myArray.splice(0,2));
+    <!--Ejecutar-->
+    <button type="submit" name="buttonEx4g" id="buttonEx4g">Ejecutar</button><span id='resultEx4g'></span>
+    <!--Limpiar-->
+    <button type="reset" name="buttonEx4g" id="resetEx4g">Limpiar</button><span id='resetEx4g'></span>
+    </code></pre>
+
+<!--array.slice()-->
+<br>
+<ul>
+    <li type="disc"><span>Array.slice(start, end)</span>. Devuelve una copia de una parte del array dentro de un nuevo array empezando por inicio hasta fin (fin no incluido). El array original no se modificará.</span></li>
+</ul>
+
+<pre><code class="language-javascript">
+    <!--Crea método-->
+    <span class="comment">//Array.slice()</span>
+    let myArray = [1,2,3,4,5,6];
+    myArray.splice(0,1);
+    console.log(myArray.slice(0,1));
+    <!--Ejecutar-->
+    <button type="submit" name="buttonEx4h" id="buttonEx4h">Ejecutar</button><span id='resultEx4h'></span>
+    <!--Limpiar-->
+    <button type="reset" name="buttonEx4h" id="resetEx4h">Limpiar</button><span id='resetEx4h'></span>
+    </code></pre>
+
+
+    <li type="disc"><span>Búsqueda de elemento NaN.</span>
+
+<!--array.isNaN()-->
+<br>
+<ul>
+    <li type="disc"><span>Array.isNaN(start, end)</span>. Determina cuando el valor es NaN o no. </span></li>
+</ul>
+
+<pre><code class="language-javascript">
+    <!--Crea método-->
+    <span class="comment">//Array.isNaN()</span>
+    let myArray = [1,2,3,NaN,5,6];
+    isNaN(myArray[3]);
+    console.log(isNaN(myArray[3]));
+    <!--Ejecutar-->
+    <button type="submit" name="buttonEx4i" id="buttonEx4i">Ejecutar</button><span id='resultEx4i'></span>
+    <!--Limpiar-->
+    <button type="reset" name="buttonEx4i" id="resetEx4i">Limpiar</button><span id='resetEx4i'></span>
+    </code></pre>
+
+    <li type="disc"><span>Control de duplicados.</span>
+<br>
+
+    <p>Puesto que los arrays admiten duplicados, tenemos la opción de comparar los elementos y crear 
+        otro array con los elementos sin repetir, o meter el array en un set, de manera que automáticamente
+        eliminará los duplicados.</p>
+
+    <h3>Set</h3>
+    <li type="disc"><span>Busqueda de elementos.</span>
+        <p>Indicados anteriormente en el punto 2. </p>
+    <li type="disc"><span>Eliminación de elementos.</span>
+
+<!--set.delete()-->
+<br>
+<ul>
+    <li type="disc"><span>Set.delete(value)</span>. Elimina el elemento especificado y devuelve true o false.</span></li>
+</ul>
+
+<pre><code class="language-javascript">
+    <!--Crea método-->
+    <span class="comment">//Set.delete(value)</span>
+    let mySet = new Set([1,2,3,4,5,6]);
+    console.log(mySet.delete(1));
+    <!--Ejecutar-->
+    <button type="submit" name="buttonEx4j" id="buttonEx4j">Ejecutar</button><span id='resultEx4j'></span>
+    <!--Limpiar-->
+    <button type="reset" name="buttonEx4j" id="resetEx4j">Limpiar</button><span id='resetEx4j'></span>
+    </code></pre>
+
+    <li type="disc"><span>Búsqueda de elemento NaN.</span>
+<!--set.has(value)-->
+<br>
+<ul>
+    <li type="disc"><span>Set.has(value)</span>. Devuelve true o false si contiene el elemento especificado.</span></li>
+</ul>
+
+<pre><code class="language-javascript">
+    <!--Crea método-->
+    <span class="comment">//Set.has(value)</span>
+    let mySet = new Set([1,2,3,4,5,NaN]);
+    console.log(mySet.has(NaN));
+    <!--Ejecutar-->
+    <button type="submit" name="buttonEx4k" id="buttonEx4k">Ejecutar</button><span id='resultEx4k'></span>
+    <!--Limpiar-->
+    <button type="reset" name="buttonEx4k" id="resetEx4k">Limpiar</button><span id='resetEx4k'></span>
+    </code></pre>
+    <li type="disc"><span>Control de duplicados.</span></li>
+        <p>Set no admite duplicados.</p>
+        </li>
+ 
+        <!--Pregunta 5-->
+    <br>
+    <li class="question">5. Crea un set donde se almacenen los alumnos ausentes. Repítelos y muéstralos.</li><br>
+
+         <!--Pregunta 6-->
+         <br>
+         <li class="question">6. Indica qué es un Map y crea uno partiendo del array. 
+             Partiendo de él, crea tres arrays: uno con las claves, otro con los valores y otro con los objetos.</li><br>
+            <p>Un Map es una colección que contiene pares de key(clave) y value(valor). Los posicion por orden de inserción. Admite cualquier valor. Tanto valores primitivos como objetos pueden usarse como claves o valores.</p>
+            
+        
+ <!--Pregunta 7-->
+ <br>
+ <li class="question">7. Demuestra que un Map admite claves de cualquier tipo: cadenas, null, NaN, null, funciones...</li>
+<span>Map con cadenas.</span>
+     <!--Map con cadenas-->
+     <pre><code class="language-javascript">
+    <!--Crea método-->
+    <span class="comment">//Map.set(Strings)</span>
+    let stringsMap = new Map();
+    stringsMap.set('a', 1);
+    stringsMap.set('b', 2);
+    stringsMap.set('c', 3);
+    console.log(stringsMap);
+    <!--Ejecutar-->
+    <button type="submit" name="buttonEx7a" id="buttonEx7a">Ejecutar</button><span id='resultEx7a'></span>
+    <!--Limpiar-->
+    <button type="reset" name="buttonEx7a" id="resetEx7a">Limpiar</button><span id='resetEx7a'></span>
+        </code></pre>
+
+        <span>Map con Null.</span>
+        <!--Map con Null-->
+        <pre><code class="language-javascript">
+    <!--Crea método-->
+    <span class="comment">//Map.set(null)</span>
+    let nullMap = new Map();
+    nullMap.set(null, 'a');
+    nullMap.set(null, 'b');
+    nullMap.set(null, 'c');
+    console.log(nullMap);
+    <!--Ejecutar-->
+    <button type="submit" name="buttonEx7b" id="buttonEx7b">Ejecutar</button><span id='resultEx7b'></span>
+    <!--Limpiar-->
+    <button type="reset" name="buttonEx7b" id="resetEx7b">Limpiar</button><span id='resetEx7b'></span>
+           </code></pre>
+
+           <span>Map con Nan.</span>
+           <!--Map con Nan-->
+           <pre><code class="language-javascript">
+    <!--Crea método-->
+    <span class="comment">//Map.set(Nan)</span>
+    let nanMap = new Map();
+    nanMap.set(NaN, 'a');
+    nanMap.set(NaN, 'b');
+    nanMap.set(NaN, 'c');
+    console.log(nanMap);
+    <!--Ejecutar-->
+    <button type="submit" name="buttonEx7c" id="buttonEx7c">Ejecutar</button><span id='resultEx7c'></span>
+    <!--Limpiar-->
+    <button type="reset" name="buttonEx7c" id="resetEx7c">Limpiar</button><span id='resetEx7c'></span>
+              </code></pre>
+
+              <span>Map con funciones.</span>
+              <!--Map con funciones-->
+              <pre><code class="language-javascript">
+     <!--Crea método-->
+     <span class="comment">//Map.set(function)</span>
+    let functionMap = new Map();
+    
+    let fun0 = function (a){
+        return a + 2;
+    }
+    
+    let fun1 = function (a){
+     return a + 2;
+    }
+    
+    let fun2 = function (a){
+     return a + 2;
+    }
+    
+    functionMap.set(fun0 , 'a');
+    functionMap.set(fun1, 'b');
+    functionMap.set(fun2, 'c');
+    console.log(functionMap);
+    
+     <!--Ejecutar-->
+     <button type="submit" name="buttonEx7d" id="buttonEx7d">Ejecutar</button><span id='resultEx7d'></span>
+     <!--Limpiar-->
+     <button type="reset" name="buttonEx7d" id="resetEx7d">Limpiar</button><span id='resetEx7d'></span>
+     </code></pre>
+
+        </ul>
+    
+<!--Pregunta 8-->
+<br>
+<li class="question">8. Crea un map donde se almacenen los alumnos ausentes. Repítelos y muéstralos.</li> 
+
+<!--Pregunta 9-->
+<br>
+<li class="question"> 9. Crea una función "quitaLosRepes(array)" que devuelva un array con los elementos sin repetir. Utiliza la
+    característica del objeto Set: no admite valores duplicados.</li> 
+<br>
+    <span>Quita elementos repetidos en un array.</span>
+     <pre><code class="language-javascript">
+    <!--Crea método-->
+    <span class="comment">//Eliminar elementos repetidos en un array</span>
+    let myArray = [1,2,3,4,1,2];
+     
+    function quitaLosRepes(param){
+        let array1 = new Set(param);
+        return array1;
+     }
+
+     quitaLosRepes(myArray);
+
+    <!--Ejecutar-->
+    <button type="submit" name="buttonEx9" id="buttonEx9">Ejecutar</button><span id='resultEx9'></span>
+    <!--Limpiar-->
+    <button type="reset" name="buttonEx9" id="resetEx9">Limpiar</button><span id='resetEx9'></span>
+        </code></pre>
+
+<!--Pregunta 10-->
+<br>
+<li class="question"> 10. Averigua mediante código si un WeakSet admite objetos primitivos. Captura la excepción.</li> 
+<br>
+<span>WeakSet</span>
+<pre><code class="language-javascript">
+<!--Crea método-->
+    <span class="comment">//Eliminar elementos repetidos en un array</span>
+
+    function worksWithPrimitive(param1, param2){
+    try {
+      let weakMapEx10 = new WeakMap(param1, param2);
+    return weakMapEx10;
+    } catch (e) {
+      console.error("No admite valores primitivos.", 
+      e.message);
+    }
+    
+  }
+  console.log(worksWithPrimitive("primitive1", "primitive2"));
+
+    <!--Ejecutar-->
+    <button type="submit" name="buttonEx10" id="buttonEx10">Ejecutar</button><span id='resultEx10'></span>
+    <!--Limpiar-->
+    <button type="reset" name="buttonEx10" id="resetEx10">Limpiar</button><span id='resetEx10'></span>
+       </code></pre>
+<!--Pregunta 11-->
+<br>
+<li class="question"> 11. Averigua mediante código si WeakSet o WeakMap son iterables. Puedes utilizar for..of.</li> 
+   
+<br>
+<span>WeakSet Iterable</span>
+<pre><code class="language-javascript">
+<!--Crea método-->
+    <span class="comment">//Comprobación WeakSet iterable</span>
+    let student1 = {name: 'Ana'};
+    let student2 = {name: 'Laura'};
+    let student3 = {name: 'Carlota'};
+
+    let wsStudents = new Set();
+    wsStudents.add(student1).add(student2).add(student3);
+
+    function interateWeakSet(param){
+      try {
+        let wsEx11 = param;
+        for (const element of wsEx11) {
+          console.log(element);
+        }
+        return wsEx11; 
+      } catch (e) {
+        console.error("No es iterable.", e.message);
+      }
+     }
+
+    console.log(interateWeakSet(wsStudents));
+
+    <!--Ejecutar-->
+    <button type="submit" name="buttonEx11a" id="buttonEx11a">Ejecutar</button><span id='resultEx11a'></span>
+    <!--Limpiar-->
+    <button type="reset" name="buttonEx11a" id="resetEx11a">Limpiar</button><span id='resetEx11a'></span>
+       </code></pre> 
+
+       <span>WeakMap Iterable</span>
+       <pre><code class="language-javascript">
+       <!--Crea método-->
+    <span class="comment">//Comprobación WeakMap iterable</span>
+    let student1 = {name: 'Ana'};
+    let student2 = {name: 'Laura'};
+    let student3 = {name: 'Carlota'};
+    
+    let msStudents = new Map();
+    msStudents.set(student1).set(student2).set(student3);
+
+    function interateMapSet(param){
+      try {
+        let msEx11 = param;
+        for (const element of msEx11) {
+          console.log(element);
+        }
+        return msEx11; 
+      } catch (e) {
+        console.error("No es iterable.", e.message);
+      }
+         
+    }
+    console.log(interateMapSet(msStudents));
+       
+    <!--Ejecutar-->
+    <button type="submit" name="buttonEx11b" id="buttonEx11b">Ejecutar</button><span id='resultEx11b'></span>
+    <!--Limpiar-->
+    <button type="reset" name="buttonEx11b" id="resetEx11b">Limpiar</button><span id='resetEx11b'></span>
+              </code></pre>
+    
+
+</body>
+
+</html

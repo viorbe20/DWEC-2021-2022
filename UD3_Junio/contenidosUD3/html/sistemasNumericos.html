@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='author' content='Virginia Ordoño Bernier'>
+    <meta name='statement' content='En JavaScript implementa estas funciones. '>
+    <title>Tarea 3.4. Listado Number</title>
+    <script src="tarea3.4_OrdoñoBernierVirginia.js"></script>
+</head>
+<body>
+
+
+
+    <noscript>
+        <p>Bienvenido a Mi Sitio</p>
+        <p>La página que estás viendo requiere para su funcionamiento el uso de JavaScript.
+            Si lo has deshabilitado intencionadamente, por favor vuelve a activarlo.</p>
+    </noscript>
+
+    <form id="myForm">
+
+        <h1>1. Conversión de números</h1>
+
+        <label>
+            Binario
+        <input type="number" id="bin" placeholder="0 o 1">
+        </label>
+        <span id="resultBin"></span>
+        <br>
+        <br>
+
+        <label>
+            Octal
+        <input type="number" id="oct" placeholder="0 a 7">
+        </label>
+        <span id="resultOct"></span>
+        <br>
+        <br>
+
+        <label>
+            Decimal
+        <input type="number" id="dec" placeholder="1234567890">
+        </label>
+        <span id="resultDec"></span>
+        <br>
+        <br>
+
+        <label>
+            Hexadecimal
+        <input type="text" id="hex" placeholder="0 a 9 y A a F">
+        </label>
+        <span id="resultHex"></span>
+        <br>
+        <br>
+
+        <h1>2. Suma y multiplicación</h1>
+
+        <label><strong>Sistema</strong></label>
+        <input type="radio" id="binary" name=system value="binary">Binario
+        <input type="radio" id="octal" name=system value="octal">Octal
+        <input type="radio" id="decimal" name=system value="decimal">Decimal
+        <input type="radio" id="hexadecimal" name=system value="hexadecimal">Hexadecimal
+        <br>
+        <br>
+
+        <label><strong>Operación</strong></label>
+
+        <input type="radio" id="addition" name=operation value="addition">Sumar
+        <input type="radio" id="multiplication" name=operation value="multiplication">Multiplicar
+        <br>
+        <br>
+
+        <hr>
+   
+        <label>
+            Operando 1
+        <input type="text" id="ope1">
+        </label>
+        <span id="resultOpe1"></span>
+        <br>
+        <br>
+
+        <label>
+            Operando 2
+        <input type="text" id="ope2">
+        </label>
+        <span id="resultOpe2"></span>
+        <br>
+        <br>
+
+        <label>
+            Resultado
+        <input type="number" id="result">
+        </label>
+        
+
+
+        <h1>3. Cálculo del área de una circunferencia</h1>
+        <label>
+            Introduce el radio
+        <input type="number" id="radius" placeholder="2.5">
+        </label>
+        <span id="resultAreaCircum"></span>
+        <br>
+        <br>
+
+    </form>
+
+
+</body>
+</html

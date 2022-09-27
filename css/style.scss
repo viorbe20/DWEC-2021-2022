@@ -1,0 +1,117 @@
+body {
+  background-color: black;
+}
+
+header {
+  background: url("../img/jsIcon.png") no-repeat 20% 0%; //source: https://pixabay.com/es/vectors/javascript-js-logo-c%c3%b3digo-fuente-736400/
+  background-size: 3%;
+
+  h1 {
+    padding: 10px;
+    text-align: center;
+    color: white;
+  }
+
+  p {
+    font-size: 20px;
+    text-align: center;
+    color: white;
+  }
+}
+
+main {
+  background-color: #fece1a;
+  display: flex;
+  flex-wrap: wrap;
+  background-size: cover;
+  justify-content: center;
+  padding-top: 40px;
+
+  a {
+    text-decoration: none;
+  }
+
+  article {
+    background-color: #0d701e;
+    margin: 20px;
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column-reverse;
+
+    h2 {
+      background-color: #181a1c;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+  }
+
+  #ud1 {
+    background: url("../img/img_ud1.png") no-repeat; //source: https://pixabay.com/es/illustrations/desarrollador-programador-tecnolog%c3%ada-3461405/
+    background-size: cover;
+  }
+
+  #ud2 {
+    background: rgb(132, 132, 238) url("../img/img_ud2.png") no-repeat; //source: https://pixabay.com/es/illustrations/vainilla-flor-de-vainilla-florecer-5105851/
+    background-size: cover;
+  }
+
+  #ud3 {
+    background: rgb(132, 132, 238) url("../img/img_ud3.jpg") no-repeat; //source: https://pixabay.com/es/illustrations/educaci%c3%b3n-alfabeto-escuela-letras-3704026/
+    background-size: cover;
+  }
+
+  #ud4 {
+    background: rgb(132, 132, 238) url("../img/img_ud4.jpg") no-repeat; //source: https://pixabay.com/es/illustrations/computadora-port%c3%a1til-usuario-flecha-3706810/
+    background-size: cover;
+  }
+
+  #ud5 {
+    background: rgb(132, 132, 238) url("../img/img_ud5.jpg") no-repeat; //source: https://pixabay.com/es/illustrations/lista-de-verificaci%c3%b3n-negocio-3693113/
+    background-size: cover;
+  }
+
+  #ud6 {
+    background: rgb(132, 132, 238) url("../img/img_ud6.jpg") no-repeat; //source: https://pixabay.com/es/illustrations/fondo-de-primavera-%c3%a1rbol-de-sakura-4039218/
+    background-size: cover;
+  }
+
+  #ud7 {
+    background: rgb(132, 238, 144) url("../img/img_ud7.png") no-repeat; //source: https://pixabay.com/es/vectors/jquery-logo-jquery-m%c3%b3vil-marco-444684/
+    background-size: 100%;
+  }
+
+  #challenges {
+    background: url("../img/img_ud8.png") no-repeat; //source: https://pixabay.com/es/vectors/aventuras-escalada-senderismo-5519220/
+    background-size: cover;
+  }
+}
+
+//Effects
+.mouseenter {
+  h2 {
+    background-color: purple;
+    color: yellow;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+  } 
+}
+
+.index{
+  position: fixed;
+  text-decoration: none;
+  padding: 1%;
+  background-color: purple;
+  color: white;
+  font-weight: bold;
+  left: 3%;
+  top:17%;
+  &:hover{
+    background-color: white;
+    color:purple;
+  }
+}

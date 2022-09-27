@@ -1,0 +1,75 @@
+body {
+  background-color: black;
+}
+
+header {
+  background: url("../img/jsIcon.png") no-repeat 20% 0%;
+  background-size: 3%;
+}
+header h1 {
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+header p {
+  font-size: 20px;
+  text-align: center;
+  color: white;
+}
+
+header a,
+footer a {
+  text-decoration: none;
+}
+header a p,
+footer a p {
+  text-align: center;
+  color: white;
+  padding: 10px;
+  width: 100px;
+  margin-left: 20px;
+  font-size: 20px;
+  background-color: #0d701e;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fece1a;
+}
+
+.ex {
+  background-color: #0d701e;
+  margin: 20px;
+  width: 400px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.ex h2 {
+  color: #fece1a;
+  text-align: center;
+}
+.ex a {
+  text-decoration: none;
+  background-color: #181a1c;
+}
+.ex a:hover {
+  background-color: white;
+}
+.ex a:hover p {
+  color: #0d701e;
+  font-weight: bold;
+}
+.ex a p {
+  text-align: center;
+  color: white;
+  padding: 5px;
+  width: 250px;
+  font-size: 20px;
+}
+.ex a p :hover {
+  background-color: white;
+}/*# sourceMappingURL=style.css.map */

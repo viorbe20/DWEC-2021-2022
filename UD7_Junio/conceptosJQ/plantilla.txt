@@ -1,0 +1,13 @@
+        <!--plantilla-->
+        <div id="" class="conceptTitle">
+            <h3></h3>
+            
+            <ul>
+                <li></li>
+            </ul>
+
+            <pre><code>$(":input") => Selecciona todos los elementos &lt;input&gt;.</pre></code>
+            <a class="w3s" href="">Ejemplo W3School</a>
+            
+            <br><br><a href="#indice">Índice</a><br>
+        </div>

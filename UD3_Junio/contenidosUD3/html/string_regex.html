@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='author' content='Virginia Ordoño Bernier'>
+    <meta name='statement' content='En JavaScript implementa estas funciones. 
+    Utiliza el mismo formulario para E/S de los textos.
+    Cada caja de texto con una función distinta la salida debe ir en un elemento adyacente.
+    Cuida la accesibilidad/usabilidad'>
+    <title>Tarea 3.2. Listado String y RegExp</title>
+    <script src="../js/string_regex.js"></script>
+</head>
+<body>
+
+
+
+    <noscript>
+        <p>Bienvenido a Mi Sitio</p>
+        <p>La página que estás viendo requiere para su funcionamiento el uso de JavaScript.
+            Si lo has deshabilitado intencionadamente, por favor vuelve a activarlo.</p>
+    </noscript>
+
+    <form>
+
+        <h1>Objetos String y RegExp</h1>
+        <label>
+            Capitaliza:
+        <input type="text" id="capitalise" value="hola adios,un-dos'tres'">
+        </label>
+        <span id="resultCapitalise"></span>
+        <br>
+        <br>
+
+        <label>
+            Invierte: 
+        <input type="text" id="reverse" value="holaA AdiOs">
+        </label>
+        <span id="resultReverse"></span>
+        <br>
+        <br>
+
+        <label>
+            CamelCase: 
+        <input type="text" id="camelCase" value="hola amigos cómo estáis">
+        </label>
+        <span id="resultCamelCase"></span>
+        <br>
+        <br>
+
+        <label>
+            Sin CamelCase: 
+        <input type="text" id="noCamelCase" value="holaAmigos CómoEstáis">
+        </label>
+        <span id="resultNoCamelCase"></span>
+        <br>
+        <br>
+
+        <label>
+            Finaliza: 
+        <input type="text" id="endsWith1" value="Arquímedes dijo Eureka">
+        </label>
+        <label>
+            Con:
+        <input type="text" id="endsWith2" value="Eureka">
+        </label>
+        <span id="resultEndsWith"></span>
+        <br>
+        <br>
+
+        <label>
+            Comienza: 
+            <input type="text" id="startsWith1" value="Arquímedes dijo Eureka">
+        </label>
+        <label>
+            Con:
+            <input type="text" id="startsWith2" value="Arquímedes">
+        </label>
+        <span id="resultStartsWith"></span>
+        <br>
+        <br>
+
+        <label>
+            DNI: 
+            <input type="text" id="dni" value="12345678 a">
+        </label>
+        <span id="resultDni"></span>
+        <br>
+        <br>
+
+
+    <label>Matrículas:<br>
+        <textarea id="licensePlate" cols="20" rows="7" >1234BCD
+1234 BCD
+1234-BCD
+123 BCD
+1234 ABC
+1234 QBC
+    </textarea>
+    </label>
+        <span id="resultLicensePlate"></span>
+        <br>
+        <br>
+
+        <label>Codigo postal:<br>
+            <textarea id="postalCode" cols="20" rows="7">52001
+14014
+53001
+14000</textarea>
+        </label>
+        <span id="resultPostalCode"></span>
+        <br>
+        <br>
+
+        <label>
+            Dirección MAC: 
+            <input type="text" id="mac" value="AB:CD:F1:23:45:67">
+        </label>
+        <span id="resultMac"></span>
+        <br>
+        <br>
+
+        <label>
+            Dirección IP: 
+            <input type="text" id="ip" value="192:168:1:02">
+        </label>
+        <span id="resultIp"></span>
+        <br>
+        <br>
+    </form>
+
+</div>
+</body>
+</html

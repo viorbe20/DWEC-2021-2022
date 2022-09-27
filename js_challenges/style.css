@@ -1,0 +1,112 @@
+body {
+  padding: 10px;
+  background-color: #f4e6f0;
+  line-height: 22px;
+  background-image: url("http://www.htmlhelp.com/bg.png");
+}
+
+h1 {
+  text-align: center;
+  color: #2f6627;
+  padding: 10px;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.myButton {
+	background-color:#44c767;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.myButton:hover {
+	background-color:#5cbf2a;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+#tree {
+  display: flex;
+  flex-direction: column;
+}
+
+main{
+    height: 400px;
+}
+
+#ch1{
+    background: url("img/ch1.png") no-repeat;
+    background-size: 30%;
+    background-position: center;
+}
+
+#ch2{
+  background: url("img/ch2.png") no-repeat;
+  background-size: 40%;
+  background-position: center;
+}
+
+#ch3{
+  background: url("img/ch3.png") no-repeat;
+  background-size: 30%;
+  background-position: center;
+}
+
+#ch4{
+  background: url("img/ch4.png") no-repeat;
+  background-size: 5%;
+  background-position: 5px;
+  height: 50px;
+}
+
+#ch5{
+  background: url("img/ch5.png") no-repeat;
+  background-size: 35%;
+  background-position: center;
+}
+
+#ch6{
+  background: url("img/ch6.png") no-repeat;
+  background-size: 35%;
+  background-position: center;
+}
+
+#ch7{
+  background: url("img/ch7.png") no-repeat;
+  background-size: 35%;
+  background-position: center;
+}
+
+#ch8{
+  background: url("img/ch8.png") no-repeat;
+  background-size: 45%;
+  background-position: center;
+  height: 280px;
+}
+
+#ch9{
+  background: url("img/ch9.png") no-repeat;
+  background-size: 35%;
+  background-position: center;
+  height: 230px;
+}
+
+#ch10{
+  background: url("img/ch10.png") no-repeat;
+  background-size: 15%;
+  background-position: center;
+  height: 120px;
+}

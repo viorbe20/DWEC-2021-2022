@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='author' content='Virginia Ordoño Bernier'>
+    <link rel='stylesheet' type='text/css' href='../css/styles_parts.css' />
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src='../js/part6.js'></script>
+    <title>Manual jQuery: Parte 6</title>
+</head>
+
+<body>
+    <h1>Parte 6: Eventos en jQuery</h1>
+    <h2>Virginia Ordoño Bernier</h2>
+
+    <h5 class="capa">Los eventos son uno de los elementos más importantes en el desarrollo de aplicaciones web
+        enriquecidas del lado del
+        cliente, puesto que sirven para realizar acciones en la página a medida que el usuario realiza cosas con la
+        página. Es
+        decir, son la base para crear la interacción con el usuario, algo tan importante en las páginas que usan jQuery.
+    </h5>
+
+    <h2>Demo 1</h2>
+    <ul class="capa">
+        <li>Evento dblclick(): se produce cuando se realizan dos clic seguidos sobre un mismo elemento.</li>
+        <li>Tenemos una capa, en la que se puede hacer doble-clic, pero que también tiene definido un evento clic.
+            Entonces, al
+            hacer un doble clic podremos comprobar que se producen dos eventos clic y después un doble-clic.</li>
+        <li>Con ello, al hacer clic o doble-clic se mostrará el mensaje para ver la cuenta de clics y dobles clic
+            realizados y
+            podremos comprobar que siempre se producen dos clics antes de cualquier doble clic.</li>
+    </ul>
+    <div id="micapa" style="padding: 10px; background-color: #ffcc99; width: 150px; float:
+    left;">Hazme dobleclick</div>
+    <div id="mensaje" style="padding: 10px; margin-left: 180px;">Aquí voy a colocar mensajes para que
+        los leas...</div>
+
+    <h2>Demo 2</h2>
+    <ul class="capa">
+        <li>Efecto tip.</li>
+        <li>Para realizar este efecto tendremos dos elementos, el primero será un elemento visible en todo momento y el
+            segundo
+            será un elemento oculto, el tip, que se mostrará sólo al pasar el ratón sobre el primer elemento.</li>
+        <li>Los estilos importantes aquí son display: none; (para que el elemento esté oculto inicialmente) y position:
+            absolute;
+            (para que lo podamos posicionar libremente por la página y sin afectar a otros elementos).</li>
+    </ul>
+    <div id="elemento1" style="background-color: #ccccff; padding: 5px;">Pasa el ratón por encima de
+        este "elemento1".</div>
+    <p>
+        Este texto es para poner <a id="elemento2" href="#">otro elemento con tip</a>.
+    </p>
+
+    <div class="tip" id="tip1">Esto es para explicar algo sobre el elemento1</div>
+    <div class="tip" id="tip2">Explico mejor este otro elemento con tip!!</div>
+
+    <h2>Demo 3</h2>
+    <ul class="capa">
+        <li>Eventos de teclado.</li>
+        <li>Se trata de hacer una función que detecte cualquier evento de teclado, muestre el tipo de evento que ha
+            ocurrido y lo
+            muestre en la página. Así podremos ver los eventos que se producen, sean cuales sean, y en qué orden.</li>
+    </ul>
+
+    <div id="loescrito"></div>
+
+    <h2>Demo 4</h2>
+    <ul class="capa">
+        <li>Eventos keypress().</li>
+        <li>Averigua la tecla que se está pulsando.</li>
+    </ul>
+    <form>
+        <textarea cols=300 rows=2 id="mitexto">Escribe algo aquí!</textarea>
+        <br>
+        <b>Tecla pulsada:</b>
+        <br>
+        <div id="demo4"></div>
+    </form>
+
+    <h2>Demo 5</h2>
+    <ul class="capa">
+        <li>bind() y unbind().</li>
+        <li>Con el método bind() podemos definir de una manera genérica cualquier tipo de evento, o incluso un mismo
+            manejador
+            de eventos para distintos tipos de eventos distintos.</li>
+        <li>También vamos a hacer el paso contrario, es decir, eliminar un evento previamente asignado a un elemento o
+            varios elementos de la página.</li>
+    </ul>
+
+    <p class="miclase">Primer párrafo</p>
+    <p>Otro párrafo</p>
+    <input type=button value="Quitar el alert del clic del primer párrafo" id="quitarevento">
+
+    <h2>Demo 6</h2>
+    <ul class="capa">
+        <li>live()</li>
+        <li>El método live() funciona de manera similar al método bind() de jQuery, con la particularidad que la
+            asignación del
+            evento es "dinámica" y afecta no sólo a los elementos que casen con el selector en el momento de la
+            invocación, sino
+            también todos los elementos que se puedan definir en un futuro y que casen con ese selector.</li>
+    </ul>
+    <div class="verde">Esta capa tiene la clase verde (haz clic)</div>
+
+    <div class="verde">Segunda capa donde coloco la clase verde</div>
+
+    <div id="noverde">Tercera capa que no es verde</div>
+
+    <div class="verde">Otra con clase verde</div>
+
+    <input type=button value="insertar nuevo elemento verde" id="insertarelem">
+
+    <input type=button value="Poner la clase verde en el div que no la tiene" id="ponerclaseverde">
+
+</body>
+
+</html>

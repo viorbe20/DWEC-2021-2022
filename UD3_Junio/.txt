@@ -1,0 +1,16 @@
+Tarea UD3. Tipo examen
+Entrega un ejercicio "tipo examen" donde demuestres el buen uso de los objetos predefinidos javaScript vistos en la unidad:
+
+Math
+Number: isFinite, isInteger, isSafeInteger, parseFloat, parseInt, toPrecision, MAX_SAFE_INTEGER, MIN_SAFE_INTEGER, EPSILON, MAX_VALUE, toLocaleString
+BigInt
+String: padStart(), padEnd(), trim(),  trimEnd(), trimStart(), indexOf(), lastIndexOf(), split(), slice(), startsWith(), endsWith(), .toUpperCase(), .toLowerCase(), includes()... match, matchAll, replace, search y split
+RegExp: Doblar caracteres de escape en cadenas literales, Banderas, Grupos de captura, test y exec. Métodos de String:  match, matchAll, replace, search y split
+Collections: MapSet, WeakMap, WeakSet
+Array
+Date
+Error
+Navigator, Screen, 
+Window: Gestión de las ventanasAbrir y cerrar nuevas ventanas, Apariencia de las ventanas, Comunicación entre ventanas
+History, Location, Document
+localStorage, sessionStorage

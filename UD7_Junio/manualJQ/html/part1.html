@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='author' content='Virginia Ordoño Bernier'>
+    <link rel='stylesheet' type='text/css' href='../css/styles_parts.css' />
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src='../js/part1.js'></script>
+    <title>Manual jQuery: Parte 1</title>
+</head>
+
+<body>
+    <h1>Parte 1: Introducción a jQuery</h1>
+    <h2>Virginia Ordoño Bernier</h2>
+
+    <h2>Demo 1</h2>
+    <p>=> Dos inputs con el mismo evento.</p>
+    <p>=> selector.html(): introduce texto</p>
+    <div id="capa" style="padding: 10px; background-color: #bdecb6">Haz clic en un botón</div>
+    <input type="button" value="Botón A" style="margin-top: 20px;">
+    <input type="button" value="Botón B">
+
+    <h2 style="color: #2d572c">Demo 2</h2>
+    <p>=> Un div con dos eventos diferentes (encadenamiento).</p>
+    <p>=> selector.css(): añade estilo</p>
+
+    <div id="capa2" style="padding: 10px; background-color: #bdecb6;">Pon el ratón encima de esta
+        capa</div>
+    <br>
+    <div id="mensaje" style="display: none;">(Has puesto el ratón encima. Ahora quítalo de la
+        capa)</div>
+
+    <h2>Demo 3</h2>
+    <p>=> Un link te lleva a otra página.</p>
+    <p>=> location.href para indicar el destino</p>
+    <div style="padding: 10px; background-color: #bdecb6;">
+        <a href="#" id="open-link" style="text-decoration: none; color: black;">Pulsa esta línea para ir a otra
+            página.</a>
+    </div>
+
+    <h2>Demo 4</h2>
+    <p>=> Aplicar estilo con css con addClass("clase css") y removeClass("clase css")</p>
+    <div id="capa4" style="padding: 10px">
+        Esta capa es independiente y voy a añadir y eliminar clases css sobre ella.
+    </div>
+    <br>
+    <a href="#" id="link4" style="text-decoration: none; color: black;">Pasa el ratón por aquí para cambiar el estilo de
+        arriba. Sal de la línea para volver a su color original.</a>
+
+
+    <h2>Demo 5</h2>
+    <p>=> Aparece un desplegable cuando se hace check.</p>
+    <p>=> prop.('checked') </p>
+
+    <form>
+        Nombre: <input type="text" name="nombre">
+        <br><br>
+        <input type="checkbox" name="mayor_edad" value="1" id="mayoria_edad"> Soy mayor de edad
+        <br>
+        <div id="formulariomayores" style="display: none;">
+            Dato para mayores de edad: <input type="text" name="mayores_edad">
+        </div>
+    </form>
+    <br>
+
+    <h2>Demo 6</h2>
+    <p>=>.hide(duración). En milisegundos o "slow", "fast</p>
+    <p>=>.show(duración). En milisegundos o "slow", "fast</p>
+    <div id="capaefectos" style="background-color: #bdecb6; color:fff; padding:10px;">
+        Esto es una capa que nos servirá para hacer efectos!
+        <br>
+        <br>
+        Pongo este texto simplemente de prueba
+    </div>
+    <p>
+        <a href="#" id="ocultar">Ocultar la capa</a> |
+        <a href="#" id="mostrar">Mostrar la capa</a>
+    </p>
+
+    <h2>Demo 7</h2>
+    <ul class='bar'>
+        <li>callbacks: pila de funciones que se ejecutan una detrás de otra.</li>
+        <li>fadeOut(ms, function)</li>
+        <li>fadeIn(ms)</li>
+        <li>css({objeto literal})</li>
+    </ul>
+
+    <div id="capa7" style="background-color: #bdecb6; color:fff; padding:10px;">
+        Carga la página para ver el efecto.
+        <br>
+    </div>
+
+    <h2>Demo 8</h2>
+    <ul>
+        <li>load(): cargar contenido de otra página en un div.</li>
+    </ul>
+    <div id="capa8" style="background-color: #bdecb6; color:fff; padding:10px;">
+        <a href="#" id="link8">Haz clic para cargar el contenido de otra página.</a>
+    </div>
+    <div id="destino" style="background-color: #ecb6c6; color:fff; padding:10px;"></div>
+</body>
+
+</html>

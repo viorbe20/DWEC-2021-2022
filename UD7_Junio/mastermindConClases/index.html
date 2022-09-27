@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='author' content='Virginia Ordoño Bernier'>
+    <meta name='statement' content='En JavaScript implementa estas funciones.'>
+    <title>Mastermind</title>
+    <script src="main.js"></script>
+    <script src="view.js"></script>
+    <link rel='stylesheet' type='text/css' href='styles.css' />
+
+</head>
+
+<body>
+    <noscript>
+        <p>Bienvenido a Mi Sitio</p>
+        <p>La página que estás viendo requiere para su funcionamiento el uso de JavaScript.
+            Si lo has deshabilitado intencionadamente, por favor vuelve a activarlo.</p>
+    </noscript>
+</body>
+
+<main>
+    <div id="mainContainer">
+        <div id="attempts"></div>
+        <div id="container1">
+            <div id="bets">
+                <div id="bet1" class="currentBetColor" style="background-color: rgba(128, 128, 128, 0.623)"></div>
+                <div id="bet2" class="currentBetColor" style="background-color: rgba(128, 128, 128, 0.623)"></div>
+                <div id="bet3" class="currentBetColor" style="background-color: rgba(128, 128, 128, 0.623)"></div>
+                <div id="bet4" class="currentBetColor" style="background-color: rgba(128, 128, 128, 0.623)"></div>
+            </div>
+        </div>
+        <div id="container2">
+            <div id="solution">
+                <div id="ball1" class="currentBalls" style="background-color: rgba(128, 128, 128, 0.623)"></div>
+                <div id="ball2" class="currentBalls" style="background-color: rgba(128, 128, 128, 0.623)"></div>
+                <div id="ball3" class="currentBalls" style="background-color: rgba(128, 128, 128, 0.623)"></div>
+                <div id="ball4" class="currentBalls" style="background-color: rgba(128, 128, 128, 0.623)"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="colorsPalette">
+
+        <div id="green" class="colors" style="background-color: green"></div>
+        <div id="blue" class="colors" style="background-color: blue"></div>
+        <div id="yellow" class="colors" style="background-color: yellow"></div>
+        <div id="orange" class="colors" style="background-color: orange"></div>
+        <div id="red" class="colors" style="background-color: red"></div>
+        <div id="brown" class="colors" style="background-color: brown"></div>
+        <div id="black" class="colors" style="background-color: black"></div>
+        <div id="white" class="colors" style="background-color: white"></div>
+        <div>
+            <button class="btn" id="btn"> Check
+            </button>
+        </div>
+    </div>
+
+</main>
+
+</body>
+
+</html>

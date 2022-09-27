@@ -1,0 +1,45 @@
+* {
+  margin: 0%;
+}
+
+body {
+  padding: 0%;
+}
+
+header {
+  background: url("../img/jsIcon.png") no-repeat 20% 40%;
+  background-size: 6%;
+  background-color: rgb(100, 105, 101);
+  padding: 1% 0%;
+}
+header h1 {
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+header p {
+  font-size: 20px;
+  text-align: center;
+  color: white;
+}
+
+h2 {
+  text-align: justify;
+  padding: 10px;
+  line-height: 40px;
+  margin-top: 2%;
+  color: #079963;
+}
+
+a {
+  text-decoration: none;
+}
+
+body p {
+  padding: 0% 2%;
+  margin: 1% 0%;
+}
+
+main {
+  margin: 1% 1%;
+}/*# sourceMappingURL=style.css.map */

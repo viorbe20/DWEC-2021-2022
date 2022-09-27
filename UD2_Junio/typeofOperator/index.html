@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<meta name='author' content='Virginia Ordoño Bernier'>
+<link rel='stylesheet' type='text/css' href='../css/style.css'/>
+<title>typeOf vs instanceof</title>
+<script src='main.js'></script>
+</head>
+<body>
+<noscript>
+<p>Bienvenido a Mi Sitio</p>
+<p>La página que estás viendo requiere para su funcionamiento el uso de JavaScript.
+Si lo has deshabilitado intencionadamente, por favor vuelve a activarlo.</p>
+</noscript>
+<header>
+    <h1>UD2: Vanilla JS: JavaScript</h1>
+    <p>Virginia Ordoño Bernier</p>
+</header>
+<h2>Crea un array con distintos ejemplos de datos. </h2>
+<ol>
+    <li>Además de NaN y null incluye todos los primitivos (menos Symbol())</li>
+    <li>Incluye varios no primitivos (new Date()...), incluidas declaraciones de funciones</li>
+    <li> Recórrelo con la sentencia for (no el clásico) y utiliza typeof (para indicar si es o no primitivo) e instanceof (para averiguar el tipo de objeto que es (Array, String...))</li>
+    <li> En caso de ser primitivo, indica: PRIMITIVO - (tipo de primitivo) - valor</li>
+    <li>En caso de ser objeto, indica: OBJETO - (true) - de tipo Constructor - valor</li>
+    <li>Utiliza
+        <ol>
+            <li>
+                objeto.constructor.name para el operador instanceof.
+            </li>
+            <li>template String para evitar la concatenación de cadenas</li>
+            <li>error.message en caso de tener que capturar una excepción</li>
+        </ol>
+    </li>
+</ol>
+</body>
+</html>

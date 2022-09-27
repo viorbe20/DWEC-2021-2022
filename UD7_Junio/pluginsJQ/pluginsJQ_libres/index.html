@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='author' content='Virginia Ordoño Bernier'>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src='js/greyOn.js'></script>
+    <script src='js/contrastOn.js'></script>
+    <script src='js/filtersOff.js'></script>
+    <script src='js/showHideToggle.js'></script>
+    <script src='js/choseEffect.js'></script>
+    <link rel='stylesheet' type='text/css' href='css/style.css' />
+    <script src='js/main.js'></script>
+    <title>3 Plugin libres</title>
+</head>
+
+<body>
+    <noscript>
+        <p>Bienvenido a Mi Sitio</p>
+        <p>La página que estás viendo requiere para su funcionamiento el uso de JavaScript.
+            Si lo has deshabilitado intencionadamente, por favor vuelve a activarlo.</p>
+    </noscript>
+    <h1>Tarea: 3 Plugins libres.</h1>
+
+    <div id="container">
+        <figure class="box">
+            <img src="img/spring.jpg" id="1">
+            <figcaption>
+                1. Primavera
+            </figcaption>
+        </figure>
+
+        <figure class="box">
+            <img src="img/summer.jpg" id="2">
+            <figcaption>
+                2. Verano
+            </figcaption>
+        </figure>
+
+        <figure class="box">
+            <img src="img/autumn.jpg" id="3">
+            <figcaption>
+                3. Otoño
+            </figcaption>
+        </figure>
+
+        <figure class="box">
+            <img src="img/winter.jpg" id="4">
+            <figcaption>
+                4. Invierno
+            </figcaption>
+        </figure>
+    </div>
+
+    <div id="effects">
+        <div id="ex1" class="effect">
+            <label>Introduce un número para la escala del filtro.</label>
+            <label>Si no introduces un valor, se aplicará el 50%. </label>
+            <input type="number" id="input1" placeholder="Número entre 1 y 100">
+            <button type="submit" id="greyOn">Aplicar efecto gris</button>
+            <button type="submit" id="contrastOn">Aplicar contraste</button>
+            <button type="submit" id="filtersOff">Quitar filtros</button>
+        </div>
+
+        <div id="ex2" class="effect">
+            <label> Introduce el número de la foto.</label>
+            <label>Si no introduces un valor, el efecto se aplicará sobre todas. </label>
+            <input type="number" id="input2" placeholder="Número entre 1 y 4">
+            <button type="submit" id="toggle">Esconder y mostrar</button>
+            <button type="submit" id="picUp">Foto hacia arriba</button>
+            <button type="submit" id="picDown">Foto hacia abajo</button>
+        </div>
+
+        <div id="ex3" class="effect">
+            <label>Elige cualquier de los siguientes efectos.</label>
+            <button type="submit" id="hideWords">Esconder palabras</button>
+            <button type="submit" id="showWords">Mostrar palabras</button>
+            <button type="submit" id="slideUp">Efecto palabras hacia arriba</button>
+            <button type="submit" id="slideDown">Efecto palabras hacia abajo</button>
+            <button type="submit" id="slideToggle">Mostrar y esconde palabras</button>
+        </div>
+    </div>
+</body>
+
+</html>

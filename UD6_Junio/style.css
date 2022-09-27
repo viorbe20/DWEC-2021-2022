@@ -1,0 +1,10 @@
+ol > li {
+    font-weight: bold;
+    color: #000080;
+    font-size: 20px;
+}
+
+ul > li {
+    font-weight: bold;
+    list-style: disc;
+}

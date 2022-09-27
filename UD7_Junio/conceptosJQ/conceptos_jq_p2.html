@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='author' content='Virginia Ordoño Bernier'>
+    <link rel="stylesheet" href="css/style_parts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/night-owl.min.css">
+    <title>2. Core de jQuery (Conceptos)</title>
+</head>
+
+<body>
+    <noscript>
+        <p>Bienvenido a Mi Sitio</p>
+        <p>La página que estás viendo requiere para su funcionamiento el uso de JavaScript.
+            Si lo has deshabilitado intencionadamente, por favor vuelve a activarlo.</p>
+    </noscript>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <h1>2. Core de jQuery (Conceptos)</h1>
+    <a href="conceptos_jq_index.html">Volver a Conceptos jQuery</a>
+
+
+    <div id="container">
+
+        <div id="indexBox">
+            <h2 id="indice">Índice</h2>
+            <ol>
+                <li>
+                    <a href="#elemento-append">$("parentSelector").append(childElement)</a>
+                </li>
+                <li>
+                    <a href="#elemento-appendTo">$("childSelector").appendTo(parentElement)</a>
+                </li>
+                <li>
+                    <a href="#elemento-prepend">$("parentElementSelector").prepend(childElement)</a>
+                </li>
+                <li>
+                    <a href="#elemento-prependTo">$("childSelector").prependTo(parentElement)</a>
+                </li>
+                <li>
+                    <a href="#each">$("selector").each(function)</a>
+                </li>
+                <li>
+                    <a href="#length">$("selector").length()</a>
+                </li>
+                <li>
+                    <a href="#length">$("selector").size()-DEPRECATED</a>
+                </li>
+                <li>
+                    <a href="#data">$("selector").data(name)</a>
+                </li>
+            </ol>
+        </div>
+
+        <main>
+
+            <!--append-->
+            <div id="elemento-append" class="conceptTitle">
+                <h3>$("parentSelector").append(childElement)</h3>
+
+                <ul>
+                    <li>Añade contenido al final del elemento seleccionado.</li>
+                    <li>En el contenido puede haber: elementos HTML, objetos jQuery y elementos DOM</li>
+                </ul>
+
+                <pre><code>//HTML elements
+$("selector").append("&lt;p&gt;Esto es un párrafo&lt;/p&gt;");
+
+//jQuery objects
+$("selector").append($("&lt;p&gt;&lt;/p&gt;").text("Texto con jQuery");
+
+//DOM elements
+const txt = document.createElement("p");
+txt.innerHTML = "Texto como elemento DOM"; 
+$("selector").append(txt);</pre></code>
+                <a class="w3s" href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_append2">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--appendTo-->
+            <div id="elemento-appendTo" class="conceptTitle">
+                <h3>$("childSelector").appendTo(parentElement)</h3>
+
+                <ul>
+                    <li>Añade un elemento hijo a un elemento padre.</li>
+                    <li>El contenido debe tener etiquetas HTML. </li>
+                    <li>Si el contenido existe, se insertará al final del elemento seleccionado.</li>
+                </ul>
+
+                <pre><code>$("&lt;span&gt;Hello World!&lt;/span&gt;").appendTo("p"); </pre></code>
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_appendto_sel">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--prepend-->
+            <div id="elemento-prepend" class="conceptTitle">
+                <h3>$("parentSelector").prepend(childElement)</h3>
+
+                <ul>
+                    <li>Añade contenido al inicio del elemento seleccionado.</li>
+                    <li>En el contenido puede haber: elementos HTML, objetos jQuery y elementos DOM</li>
+                </ul>
+
+                <pre><code>//HTML elements
+$("selector").prepend("&lt;p&gt;Esto es un párrafo&lt;/p&gt;");
+
+//jQuery objects
+$("selector").prepend($("&lt;p&gt;&lt;/p&gt;").text("Texto con jQuery");
+
+//DOM elements
+const txt = document.createElement("p");
+txt.innerHTML = "Texto como elemento DOM"; 
+$("selector").prepend(txt);</pre></code>
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_prepend_ref">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--prependTo-->
+            <div id="elemento-prependTo" class="conceptTitle">
+                <h3>$("childSelector").prependTo(parentElement)</h3>
+
+                <ul>
+                    <li>Añade un elemento hijo al inicio de un elemento padre.</li>
+                    <li>El contenido debe tener etiquetas HTML. </li>
+                    <li>Si el contenido existe, se insertará al final del elemento seleccionado.</li>
+                </ul>
+
+                <pre><code>$("&lt;span&gt;Hello World!&lt;/span&gt;").prependTo("p"); </pre></code>
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_prependto_sel">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--each-->
+            <div id="each" class="conceptTitle">
+                <h3>$("selector").each(function)</h3>
+
+                <ul>
+                    <li>Permite aplicar una función a cada elemento de un iterable.</li>
+                    <li>Se puede personalizar en función de los métodos utilizados.</li>
+                </ul>
+
+                <pre><code>//$("selector").each(function(index,element));
+//index - Posición del  selector
+//element - Element actual (se puede usar 'this')
+                
+$("p").each(function(){
+    $("div").text($(this).text())
+});</pre></code>
+                <a class="w3s" href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_misc_each">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--length-->
+            <div id="length" class="conceptTitle">
+                <h3>$("selector").length vs. $("selector").size()</h3>
+
+                <ul>
+                    <li>size() DEPRECATED. En su lugar usar <code>$("selector").length</code></li>
+                    <li>Permite contar los elementos de ese selector.</li>
+                </ul>
+
+                <pre><code>//HTML
+&lt;p&gt;para-1&lt;/p&gt;
+&lt;p&gt;para-2&lt;/p&gt;
+&lt;p&gt;para-3&lt;/p&gt;
+
+//JS
+console.log($("p").length //3</pre></code>
+                <a class="w3s" href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_prop_length">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--data-->
+            <div id="data" class="conceptTitle">
+                <h3>$("selector").data()</h3>
+
+                <ul>
+                    <li>Añade y recupera información de un elemento.</li>
+                </ul>
+
+                <pre><code>//Set information
+$("selector").data("animal", "cat");
+
+//Get information
+$("selector").data("animal");
+
+//Remove information
+$("selector").removeData("animal");</pre></code>
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_misc_data_set_obj">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+
+            </div>
+        </main>
+    </div>
+    </main>
+    </div>
+</body>
+
+</html>

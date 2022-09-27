@@ -1,0 +1,60 @@
+.fondo-rojo {
+  background-color: red;
+}
+
+.fondo-verde {
+  background-color: green;
+}
+
+.fondo-amarillo {
+  background-color: yellow;
+}
+
+.color-rojo {
+  color: red;
+}
+
+.color-verde {
+  color: green;
+}
+
+.color-amarillo {
+  color: yellow;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  padding: 15px;
+}
+
+h1 {
+  padding: 10px;
+  color: #179c23;
+  text-align: center;
+}
+
+h2 {
+  padding: 10px;
+  background-color: #178d9c;
+  color:white;  
+}
+
+button {
+  margin: 8px;
+}
+
+.p1{
+  background-color: rgb(61, 43, 226);
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.p2{
+  background-color: rgb(226, 43, 150);
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+}
+

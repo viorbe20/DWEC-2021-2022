@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='author' content='Virginia Ordoño Bernier'>
+    <link rel='stylesheet' type='text/css' href='css/style.css' />
+    <script src='js/main.js'></script>
+    <title>Wallaform</title>
+</head>
+<header>
+    <h1>Wallaform</h1>
+</header>
+
+<body>
+    <noscript>
+        <p>Bienvenido a Mi Sitio</p>
+        <p>La página que estás viendo requiere para su funcionamiento el uso de JavaScript.
+            Si lo has deshabilitado intencionadamente, por favor vuelve a activarlo.</p>
+    </noscript>
+    <main>
+        
+        <div id="alert"></div>
+        <form id="myForm">
+
+            <section id="personal-data">
+                <h3>Datos personales</h3>
+
+                <div class="data">
+                    <label for="input-name">Nombre <input type="text" id="input-name"></label>
+                    <span id="span-name"></span>
+                </div>
+
+
+                <div class="data">
+                    <label for="input-lastname">Apellido <input type="text" id="input-lastname"></label>
+                    <span id="span-lastname"></span>
+                </div>
+
+                <div class="data">
+                    <label for="input-date">Fecha nacimiento <input type="text" id="input-date"></label>
+                    <span id="span-date"></span>
+                </div>
+
+                <div class="data">
+                    <label for="input-password">Contraseña <input type="password" id="input-password"></label>
+                    <span id="span-password"></span>
+                </div>
+
+                <div class="data">
+                    <label for="input-repeat">Repetir contraseña <input type="password" id="input-repeat"
+                            ></label>
+                    <span id="span-repeat"></span>
+                </div>
+
+                <div class="data">
+                    <label for="input-email">Email <input type="email" id="input-email" ></label>
+                    <span id="span-email"></span>
+                </div>
+
+                <div class="data">
+                    <label for="input-phone">Teléfono <input type="phone" id="input-phone" ></label>
+                    <span id="span-phone"></span>
+                </div>
+
+                <div class="data">
+                    <label for="input-dni">DNI <input type="text" id="input-dni" ></label>
+                    <span id="span-dni"></span>
+                </div>
+
+            </section>
+
+            <section id="article-data">
+                <h3>Datos del artículo</h3>
+
+                <div class="data">
+                    <label for="input-price">Precio <input type="text" id="input-price" ></label>
+                    <span id="span-price"></span>
+                </div>
+
+                <div class="data">
+                    <label for="category">Categoría de artículo:
+                        <select name="category" id="select">
+                            <option value="Ropa" selected>Ropa</option>
+                            <option value="Inmobiliaria">Inmobiliaria</option>
+                            <option value="Telefonía">Telefonía</option>
+                            <option value="Motor">Motor</option>
+                            <option value="Menaje">Menaje</option>
+                        </select>
+                    </label>
+                    <span id="span-selection"></span>
+
+                </div>
+
+                <div class="data">
+                    <label>Tipo de compra
+                        <input type="checkbox" class="purchase" id="takeaway" name="takeaway" value="recogida">Recogida
+                        <input type="checkbox" class="purchase"  id="shipping" name="shipping" value="envio">Envío
+                    </label>
+                    <span></span>
+                </div>
+
+                <div class="data">
+                    <label> Estado del artículo
+                        <input type="radio" name="condition" value="new" class="condition" id="new" /> Nuevo
+                        <input type="radio" name="condition" value="old" class="condition" id="old" /> Usado
+                    </label>
+                    <span id="span-condition"></span>
+
+                </div>
+
+            </section>
+
+            <section id="buttons">
+                
+                <button type="reset" id="reset">Limpiar</button>
+                <button type="button" id="fill">Rellenar</button>
+                <button type="submit" id="submit">Enviar</button>
+            </section>
+
+        </form>
+    </main>
+</body>
+<footer>
+    <p>Virginia Ordoño Bernier</p>
+</footer>
+
+</html>

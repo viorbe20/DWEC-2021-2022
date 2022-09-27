@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='author' content='Virginia Ordoño Bernier'>
+    <link rel="stylesheet" href="css/style_parts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/night-owl.min.css">
+    <title>1. Introducción a jQuery (Conceptos)</title>
+</head>
+
+<body>
+    <noscript>
+        <p>Bienvenido a Mi Sitio</p>
+        <p>La página que estás viendo requiere para su funcionamiento el uso de JavaScript.
+            Si lo has deshabilitado intencionadamente, por favor vuelve a activarlo.</p>
+    </noscript>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    
+    <h1>1. Introducción a jQuery (Conceptos)</h1>
+    <a href="conceptos_jq_index.html">Volver a Conceptos jQuery</a>
+    
+    <div id="container">
+        <div id="indexBox">
+            <h2 id="indice">Índice</h2>
+            <ol>
+                <li>
+                    <a href="#selector-:typename">$(":typeName")</a>
+                </li>
+                <li>
+                    <a href="#elemento-html()">$(selector).html()</a>
+                </li>
+                <li>
+                    <a href="#elemento-text()">$(selector).text()</a>
+                </li>
+                <li>
+                    <a href="#elemento-encadenamiento">$(selector).encadenamiento</a>
+                </li>
+                <li>
+                    <a href="#enlace-evento-click">$(selector).click</a>
+                </li>
+                <li>
+                    <a href="#elemento-addclass">$(selector).addClass</a>
+                </li>
+                <li>
+                    <a href="#elemento-removeclass">$(selector).removeClass</a>
+                </li>
+                <li>
+                    <a href="#elemento-toggleclass">$(selector).toggleClass</a>
+                </li>
+                <li>
+                    <a href="#elemento-hasclass">$(selector).hasClass</a>
+                </li>
+                <li>
+                    <a href="#elemento-prop-checked">$(selector).prop('checked')</a>
+                </li>
+            </ol>
+        </div>
+        
+        <main>
+
+            <!--(:typeName)-->
+            <div id="selector-:typename" class="conceptTitle">
+                <h3>$(":typeName")</h3>
+
+                <ul>
+                    <li>Los dos puntos selecciona los &lt;input&gt; cuyo tupo haya sido indicado.</li>
+                    <li>Posibilita aplicar el mismo evento a varios elementos con ese tipo, de una misma vez.</li>
+                </ul>
+
+                <pre><code>$(":input") => Selecciona todos los elementos &lt;input&gt;. 
+$(":text") => Selecciona todos los &lt;input type="text"&gt;. 
+$(":radio") => Selecciona todos los &lt;input type="radio"&gt;. 
+$(":submit") => Selecciona todos los &lt;input type="submit"&gt;. 
+$(":button") => Selecciona todos los &lt;input type="button"&gt;. 
+$(":password") => Selecciona todos los &lt;input type="password"&gt;.</pre></code>
+                <a class="w3s" href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_sel_input">Ejemplo
+                    W3School</a>
+                <br>
+
+                <ul>
+                    <li>También posibilita seleccionar &lt;input&gt; por propiedades.</li>
+                </ul>
+                <pre><code>$(":enabled") => Selecciona todos los elementos &lt;input "enabled"&gt;.
+$(":disabled") => Selecciona todos los &lt;input "disabled"&gt;.
+$(":selected") => Selecciona todos los &lt;input "selected"&gt;.
+$(":checked") => Selecciona todos los &lt;input "checked"&gt;.</pre></code>
+                <a class="w3s" href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_sel_enabled">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a>
+            </div>
+
+            <!--html()-->
+            <div id="elemento-html()" class="conceptTitle">
+                <h3>$(selector).html()</h3>
+
+                <!--Lectura-->
+                <ul>
+                    <li>Lectura. $(selector).html() devuelve el contenido (text + HTML etiquetas) de los elementos
+                        seleccionados.</li>
+                </ul>
+
+                <pre><code>$(selector).html(); //text + HTML etiquetas</pre></code>
+                <a class="w3s" href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_get">Ejemplo
+                    W3School</a><br>
+
+                <!--Escritura-->
+                <ul>
+                    <li>Escritura. Incluimos una cadena a los paréntesis que se añadirá al elemento seleccionado.</li>
+                </ul>
+                <pre><code>$(selector).html("&lt;h1&gt;Nombre&lt;/h1&gt;Virginia");</code></pre>
+                <a class="w3s" href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_set">Ejemplo
+                    W3School</a>
+
+                <!--Función-->
+                <ul>
+                    <li>Mediante una función, devuelve el contenido de los elementos seleccionados.</li>
+                </ul>
+                <pre><code>$(selector).html(function(index){
+return "&lt;h1&gt;Índice: &lt;/h1&gt; " + index;<br>
+}); //"Índice: 3"</code></pre>
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_set_func">Ejemplo
+                    W3School</a>
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--text()-->
+            <div id="elemento-text()" class="conceptTitle">
+                <h3>$(selector).text()</h3>
+
+                <!--Lectura-->
+                <ul>
+                    <li>Lectura. $(selector).text() devuelve el contenido (solo texto) de los elementos seleccionados.
+                    </li>
+                </ul>
+
+                <pre><code>$(selector).text(); //only text</pre></code>
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_text_get">Ejemplo
+                    W3School</a>
+
+                <!--Escritura-->
+                <ul>
+                    <li>Escritura. Incluimos una cadena a los paréntesis que se añadirá al elemento seleccionado.</li>
+                </ul>
+                <pre><code>$(selector).text("Añado texto al elemento.");</code></pre>
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_text_set">Ejemplo
+                    W3School</a>
+
+                <!--Función-->
+                <ul>
+                    <li>Mediante una función, devuelve el contenido de los elementos seleccionados.</li>
+                </ul>
+                <pre><code>$(selector).text(function(index){<br>
+            return "El índice del selector es " + index;<br>
+            }); //"El índice del selector es 3"</code></pre>
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_text_func">Ejemplo
+                    W3School</a>
+                <br><br><a href="#indice">Índice</a>
+            </div>
+
+            <!--encadenamiento-->
+            <div id="elemento-encadenamiento" class="conceptTitle">
+                <h3>$(selector).evento1().evento2()</h3>
+
+                <ul>
+                    <li>Permite añadir varios eventos diferentes al mismo elemento mediante el encadenamiento.</li>
+                </ul>
+
+                <pre><code>$("selector")
+.mouseover(function () { //event 1 
+$("selector").html(); 
+})
+.mouseout(function () { //event 2
+$("selector").html(); 
+});</pre></code>
+                <a class="w3s" href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_chaining2">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--click-->
+            <div id="enlace-evento-click" class="conceptTitle">
+                <h3>$(selector).click</h3>
+
+                <ul>
+                    <li>Dispara el elemento <i>click</i> en el elemento seleccionado.</li>
+                </ul>
+
+                <pre><code>$("selector").click(function (e) { 
+e.preventDefault(); 
+location.href = "index.html"; 
+});</pre></code>
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_event_click_func">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--addClass-->
+            <div id="elemento-addclass" class="conceptTitle">
+                <h3>$(selector).addClass</h3>
+
+                <ul>
+                    <li>Añade UNA O MÁS CLASES a un elemento, permitiendo así dar estilo a diferentes propiedades.</li>
+                    <li>No elimina las clases existentes.</li>
+                    <li>Si se añaden dos o más, se separan los nombres de las clases con espacios.</li>
+                </ul>
+
+                <pre><code>$("selector").addClass("className");</pre></code>
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_addclass_two">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--removeClass-->
+            <div id="elemento-removeclass" class="conceptTitle">
+                <h3>$(selector).removeClass</h3>
+
+                <ul>
+                    <li>Elimina las clases pasada por parámetro a un elemento.</li>
+                    <li>Si no tiene parámetros, se eliminan TODAS LAS CLASES.</li>
+                    <li>Si se eliminan dos o más, se separan los nombres de las clases con espacios.</li>
+                </ul>
+
+                <pre><code>$("selector").removeClass("className");
+$("selector").removeClass(); //remove all</pre></code>
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_removeclass_several">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--toggle-->
+            <div id="elemento-toggleclass" class="conceptTitle">
+                <h3>$(selector).toggle()</h3>
+
+                <ul>
+                    <li>Alterna los métodos <i>hide()</i> y <i>show()</i> en el elemento seleccionado.</li>
+                </ul>
+
+                <pre><code>$("selector").toggle();</pre></code>
+                <a class="w3s" href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_toggle">Ejemplo
+                    W3School</a>
+
+                <ul>
+                    <li>El método se puede personalizar pasándole diferentes parámetros.</li>
+                </ul>
+
+                <pre><code>// $(selector).toggle(speed)
+$("selector").toggle(milliseconds | "slow" | "fast");
+
+// $(selector).toggle(easing)
+$("selector").toggle("swing"); //slow, fast, slow
+$("selector").toggle("linear"); //constant speed
+
+// $(selector).toggle(callback)
+$("button").click(function(){
+    $("p").toggle(1000, function(){
+    console.log("Toggle has finished");
+});</pre></code>
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_toggle_speed">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--hasClass-->
+            <div id="elemento-hasclass" class="conceptTitle">
+                <h3>$(selector).hasClass</h3>
+
+                <ul>
+                    <li>Pasándole como parámetro el nombre de la clase, comprueba si ese elemento contiene esa clase
+                        devolviendo verdadero o falso.</li>
+                </ul>
+
+                <pre><code>$("selector").hasClass("className");</pre></code>
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_hasclass">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+        </main>
+</body>
+</html>

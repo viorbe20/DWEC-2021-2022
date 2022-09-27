@@ -1,0 +1,28 @@
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  padding: 5px;
+}
+
+ol li {
+  line-height: 25px;
+}
+
+h1 {
+  padding: 10px;
+  color: white;
+  background-color: #179c23;
+  text-align: center;
+  margin-left: 35%;
+  margin-right: 35%;
+}
+
+h2{
+  color: #179c23;
+}
+
+section {
+  background-color:#f1ee298e;
+  padding: 20px;
+  width: 60%;
+}

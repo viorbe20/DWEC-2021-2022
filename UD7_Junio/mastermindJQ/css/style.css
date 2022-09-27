@@ -1,0 +1,140 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+h1 {
+  padding: 10px;
+  margin: 5px;
+  color: rgb(97, 119, 65);
+}
+
+label {
+  padding: 10px;
+  margin: 5px;
+  font-size: 30px;
+  color: green;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+#mainContainer {
+  display: flex;
+  background-color: rgb(184, 224, 123);
+}
+
+#container1,
+#container2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  margin-left: 20px;
+  align-items: flex-end
+}
+
+#currentSolution  {
+  display: flex;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+#oldSolution  {
+  display: flex;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+#currentBets, #oldBets {
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  padding: 4%;
+  margin-left: 20px;
+}
+
+#colorsPalette {
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(156, 192, 103);
+}
+
+.currentBetColor, .oldBetColor {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  box-shadow: 2px 2px #888888;
+}
+
+.currentBalls, .oldBalls {
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  margin-right: 20px;
+  box-shadow: 2px 2px #888888;
+}
+
+.colors {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px #888888;
+}
+
+/* From cssbuttons.io by @martinval9 */
+/* Hide the default checkbox */
+
+/* From cssbuttons.io by @Shakil-Babu */
+.btn {
+  background-color: green;
+  color: white;
+  padding: 14px 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.4s;
+}
+
+#winner{
+  position: absolute;
+  font-size: 30px;
+  background-color: green;
+  top: 300px;
+  width: 200px;
+  *height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px #888888;
+  color: white;
+  visibility: hidden;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#reload{
+  font-size: 25px;
+  padding: 10px;
+  margin-top: 30px;
+  box-shadow: 2px 2px #888888;
+}

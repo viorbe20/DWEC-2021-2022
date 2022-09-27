@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='author' content='Virginia Ordoño Bernier'>
+    <link rel="stylesheet" href="css/style_parts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/night-owl.min.css">
+    <title>5. Métodos de CSS de jQuery (Conceptos)</title>
+</head>
+
+<body>
+    <noscript>
+        <p>Bienvenido a Mi Sitio</p>
+        <p>La página que estás viendo requiere para su funcionamiento el uso de JavaScript.
+            Si lo has deshabilitado intencionadamente, por favor vuelve a activarlo.</p>
+    </noscript>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <h1>5. Métodos de CSS de jQuery (Conceptos)</h1>
+    <a href="conceptos_jq_index.html">Volver a Conceptos jQuery</a>
+
+    <div id="container">
+        <div id="indexBox">
+            <h2 id="indice">Índice</h2>
+            <ol>
+                <li>
+                    <a href="#after">$("selector").after()</a>
+                </li>
+                <li>
+                    <a href="#before">$("selector").before()</a>
+                </li>
+                <li>
+                    <a href="#clone">$("selector").clone()</a>
+                </li>
+                <li>
+                    <a href="#detach">$("selector").detach()</a>
+                </li>
+                <li>
+                    <a href="#empty">$("selector").empty()</a>
+                </li>
+                <li>
+                    <a href="#height">$("selector").height()</a>
+                </li>
+                <li>
+                    <a href="#innerHeight">$("selector").innerHeight()</a>
+                </li>
+                <li>
+                    <a href="#insertAfter">$("selector").insertAfter()</a>
+                </li>
+                <li>
+                    <a href="#insertBefore">$("selector").insertBefore()</a>
+                </li>
+                <li>
+                    <a href="#offset">$("selector").offset()</a>
+                </li>
+                <li>
+                    <a href="#offsetParent">$("selector").offsetParent()</a>
+                </li>
+                <li>
+                    <a href="#outerHeight">$("selector").outerHeight()</a>
+                </li>
+                <li>
+                    <a href="#outerWidth">$("selector").outerWidth()</a>
+                </li>
+                <li>
+                    <a href="#position">$("selector").position()</a>
+                </li>
+                <li>
+                    <a href="#remove">$("selector").remove()</a>
+                </li>
+                <li>
+                    <a href="#replaceAll">$("selector").replaceAll()</a>
+                </li>
+                <li>
+                    <a href="#replaceWith">$("selector").replaceWith()</a>
+                </li>
+                <li>
+                    <a href="#scrollLeft">$("selector").scrollLeft()</a>
+                </li>
+                <li>
+                    <a href="#scrollTop">$("selector").scrollTop()</a>
+                </li>
+                <li>
+                    <a href="#val">$("selector").val()</a>
+                </li>
+                <li>
+                    <a href="#width">$("selector").width()</a>
+                </li>
+                <li>
+                    <a href="#wrap">$("selector").wrap()</a>
+                </li>
+                <li>
+                    <a href="#wrapAll">$("selector").wrapAll()</a>
+                </li>
+                <li>
+                    <a href="#wrapInner">$("selector").wrapInner()</a>
+                </li>
+
+            </ol>
+        </div>
+
+        <main>
+            <!--after-->
+            <div id="after" class="conceptTitle">
+                <h3>$("selector").after()</h3>
+
+                <ul>
+                    <li>Inserta contenido después de los elementos seleccionados.</li>
+                    <li>Valores: elementos HTML, objetos jQuery, elementos DOM </li>
+                </ul>
+
+                <pre><code>//HTMl elements
+const htmlElement= '<code>&lt;p&gt;</code>Inserta este párrafo<code>&lt;/p&gt;</code>';
+$("selector").after(htmlElement);
+
+//jQuery elements
+const jqElement = $("&lt;i&gt;&lt;/i&gt;").text("Elemento jQuery");
+$("selector").after(jqElement);
+
+//DOM elements
+const domElement = document.createElement("p");
+domElement.innerHTML = "Elemento HTML"; 
+$("selector").after(domElement);</code></pre>
+
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_after_func">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--before-->
+            <div id="before" class="conceptTitle">
+                <h3>$("selector").before()</h3>
+
+                <ul>
+                    <li>Inserta contenido antes de los elementos seleccionados.</li>
+                    <li>Valores: elementos HTML, objetos jQuery, elementos DOM </li>
+                </ul>
+
+                <pre><code>//HTMl elements
+const htmlElement= '<code>&lt;p&gt;</code>Inserta este párrafo<code>&lt;/p&gt;</code>';
+$("selector").before(htmlElement);
+
+//jQuery elements
+const jqElement = $("&lt;i&gt;&lt;/i&gt;").text("Elemento jQuery");
+$("selector").before(jqElement);
+
+//DOM elements
+const domElement = document.createElement("p");
+domElement.innerHTML = "Elemento HTML"; 
+$("selector").before(domElement);</code></pre>
+
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_before_func">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--clone-->
+            <div id="clone" class="conceptTitle">
+                <h3>$("selector").clone()</h3>
+
+                <ul>
+                    <li>Copia todos los elementos seleccionados, INCLUYENDO child nodes, texto y atributos.</li>
+                    <li>Si en los paréntesis no se incluyen parámetros, por defecto es FALSE.</li>
+                    <li>TRUE: especifica que los manejadores de eventos deben copiarse también.</li>
+                    <li>FALSE: especifica que los manejadores de eventos NO deben copiarse.</li>
+                </ul>
+
+                <pre><code>$("selector").clone(true));</code></pre>
+
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_clone_eventhandler">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--detach-->
+            <div id="detach" class="conceptTitle">
+                <h3>$("selector").detach()</h3>
+
+                <ul>
+                    <li>Elimina los elementos seleccionados, INCLUYENDO child nodes. Mantiene <code>data</code> y
+                        eventos.</li>
+                    <li>Matiene una copia de los elementos eliminados, lo que permite que se puedan reinsertar más
+                        adelante.</li>
+                    <li>Para eliminar los eventos y <code>data</code>, usa <a href="#remove"><code>remove()</code></a>.
+                    </li>
+                    <li>Para eliminar solo el contenido del elemento seleccionado, usa <a
+                            href="#empty"><code>empty()</code></a>.</li>
+                </ul>
+
+                <pre><code>$("selector").detach());</code></pre>
+
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_detach_remove">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--empty-->
+            <div id="empty" class="conceptTitle">
+                <h3>$("selector").empty()</h3>
+
+                <ul>
+                    <li>Elimina el contenido y los nodos hijos de los elementos seleccionados.</li>
+                    <li>MANTIENE el elemento y sus atributos.</li>
+                    <li>Matiene una copia de los elementos eliminados, lo que permite que se puedan reinsertar más
+                        adelante.</li>
+                    <li>Para eliminar los eventos y <code>data</code>, usa <a href="#remove"><code>remove()</code></a>.
+                    </li>
+                    <li>Para eliminar solo el elemento, si <code>data</code> ni eventos, usa <a
+                            href="#data"><code>data()</code></a>.</li>
+                </ul>
+
+                <pre><code>$("selector").empty());</code></pre>
+
+                <a class="w3s" href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_empty">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--height-->
+            <div id="height" class="conceptTitle">
+                <h3>$("selector").height()</h3>
+
+                <ul>
+                    <li>Devuelve la altura del PRIMER elemento seleccionado.</li>
+                    <li>Establece la altura de TODOS los elementos seleccionados.</li>
+                    <li>NO INCLUYE padding, border, o margin.</li>
+                    <li>La unidad por defecto son px, aunque se puede especificaf en em, pt, etc.</li>
+                </ul>
+
+                <pre><code>//Get height
+$("selector").height();
+$(window).height();
+$(document).height();
+
+//Set height
+$("selector").height(500);
+$("selector").height(20em);
+$("selector").height(100pt);
+</code></pre>
+
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_css_height_set_unit">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--innerHeight-->
+            <div id="innerHeight" class="conceptTitle">
+                <h3>$("selector").innerHeight()</h3>
+
+                <ul>
+                    <li>Devuelve el inner height (altura del elemento + padding) del PRIMER ELEMENTO coincidente.</li>
+                    <li>INCLUYE padding.</li>
+                    <li>NO INCLUYE border, o margin.</li>
+                </ul>
+
+                <pre><code>$("selector").innerHeight();
+$(window).innerHeight();
+$(document).innerHeight();</code></pre>
+
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_all_dimensions_ref">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--insertAfter-->
+            <div id="insertAfter" class="conceptTitle">
+                <h3>$("selector").insertAfter("HTMLelement")</h3>
+
+                <ul>
+                    <li>Inserta elementos HTML después del elemento seleccionado.</li>
+                </ul>
+
+                <pre><code>$("selector").insertAfter("p"); </code></pre>
+
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_insertafter_sel">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--insertBefore-->
+            <div id="insertBefore" class="conceptTitle">
+                <h3>$("selector").insertBefore("HTMLelement")</h3>
+
+                <ul>
+                    <li>Inserta elementos HTML antes del elemento seleccionado.</li>
+                </ul>
+
+                <pre><code>$("selector").insertBefore("p"); </code></pre>
+
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_insertbefore_sel">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--offset-->
+            <div id="offset" class="conceptTitle">
+                <h3>$("selector").offset()</h3>
+
+                <ul>
+                    <li>Establece o devuelve las coordenadas del primer elemento seleccionado.</li>
+                    <li>Devuelve un objeto con dos propiedades: <i>top</i> y <i>left</i> en píxeles.
+                    <li>Establece las coordinadas de todos los elementos que coinciden.</li>
+                </ul>
+
+                <pre><code>$("selector").offset({top: 200, left: 200});</code></pre>
+
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_css_offset_set">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--offsetParent-->
+            <div id="offsetParent" class="conceptTitle">
+                <h3>$("selector").offsetParent()</h3>
+
+                <ul>
+                    <li>Devuelve el primer elemento padre posicionado.</li>
+                    <li>Un elemento puede posicionarse con jQuery, o con las propiedades de posición de CSS
+                        (<i>relative</i> , <i>absolute</i>, <i>fixed</i>).
+                    <li>Establece las coordinadas de todos los elementos que coinciden.</li>
+                </ul>
+
+                <pre><code>$("selector").offsetParent().css("background-color", "red");;</code></pre>
+
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_css_offsetparent">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--outerHeight-->
+            <div id="outerHeight" class="conceptTitle">
+                <h3>$("selector").outerHeight()</h3>
+
+                <ul>
+                    <li>Devuelve el <i>outer height</i> (altura del elemento + padding) del PRIMER ELEMENTO coincidente.
+                    </li>
+                    <li>INCLUYE padding.</li>
+                    <li>NO INCLUYE border, o margin.</li>
+                </ul>
+
+                <pre><code>$("selector").outerHeight();
+$(window).outerHeight();
+$(document).outerHeight(
+
+//Especifica si se incluye o no el margin.
+$("selector").outerHeight(true);
+$("selector").outerHeight(false);</code></pre>
+
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_outerheightmargin_ref">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--outerWidth-->
+            <div id="outerWidth" class="conceptTitle">
+                <h3>$("selector").outerWidth()</h3>
+
+                <ul>
+                    <li>Devuelve el <i>outer width</i> (altura del elemento + padding) del PRIMER ELEMENTO coincidente.
+                    </li>
+                    <li>INCLUYE <i>padding</i> y <i>border</i>.</li>
+                    <li>NO INCLUYE <i>margin</i>.</li>
+                </ul>
+
+                <pre><code>$("selector").outerWidth();
+$(window).outerWidth();
+$(document).outerWidth();
+
+//Especifica si se incluye o no el margin.
+$("selector").outerWidth(true);
+$("selector").outerWidth(false);</code></pre>
+
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_outerwidthmargin_ref">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--position-->
+            <div id="position" class="conceptTitle">
+                <h3>$("selector").position()</h3>
+
+                <ul>
+                    <li>Devuelve la posición del primer elemento, en relación al elemento padre.</li>
+                    <li>Devuelve un objeto con dos propiedades: <i>top</i> y <i>left</i> en píxeles.</li>
+                </ul>
+
+                <pre><code>$("selector").position();</code></pre>
+
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_css_position2">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--width-->
+            <div id="height()" class="conceptTitle">
+                <li>$(selector).width()</li>
+                <li>$(selector).width(value)</li>
+                <li>$(selector).width(function(index, currentheight))</li>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

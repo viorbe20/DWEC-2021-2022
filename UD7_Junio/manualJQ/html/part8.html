@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='author' content='Virginia Ordoño Bernier'>
+    <link rel='stylesheet' type='text/css' href='../css/styles_parts.css' />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src='../js/part8.js'></script>
+    <title>Manual jQuery: Parte 8</title>
+</head>
+
+<body>
+    <h1>Parte 8: Efectos en jQuery</h1>
+    <h2>Virginia Ordoño Bernier</h2>
+
+    <h5 class="capa">Se muestrab las maneras con las que podemos crear efectos para adornar nuestras páginas y hacer que
+        la
+        experiencia de uso sea más atractiva.
+    </h5>
+
+    <h2>Demo 1</h2>
+    <ul class="capa">
+        <li>Efecto animate()</li>
+        <li>Nuestra animación hará que el borde del elemento pase a tener 20 píxeles de anchura y que el tamaño de la fuente suba
+            para 25pt.</li>
+    </ul>
+    <h1 style="border-bottom: 1px solid #ff8800; font-size: 15pt;">Animacion jQuery</h1>
+    Trabajando con el método animate:
+    <a href="#" id="animar">Animar</a>
+    <br>
+    <br>
+    Vuelvo a lo que había antes:
+    <a href="#" id="restaurar">Restaurar</a>
+
+    <h2>Demo 2</h2>
+    <ul class="capa">
+        <li>fade()</li>
+        <li>Mostrar y ocultar elementos de forma suavizada con fading</li>
+    </ul>    
+    <p>
+        <a href="#" id="ocultartoda">Ocultar toda la lista</a> |
+        <a href="#" id="mostrartoda">Mostrar toda la lista</a> |
+        <a href="#" id="ocultarmostrar">Ocultar la lista y luego mostrarla</a>
+    </p>
+
+    <form name="f1">
+        Cambia la opacidad del elemento H1 a: <select name="opacidad" id="selopacidad">
+        <option value="0.2">20%</option>
+        <option value="0.5">50%</option>
+        <option value="0.8">80%</option>
+        <option value="1">100%</option>
+        </select>
+        <br>
+        <a href="#" id="pororden">Cambiar la opacidad de los elementos de la lista por orden</a>
+    </form>
+
+    <ul id="milista">
+        <li id="e1">Elemento 1</li>
+        <li id="e2">Segundo elemento</li>
+        <li id="e3">Tercer LI</li>
+    </ul>
+
+    <h2>Demo 3</h2>
+    <ul class="capa">
+        <li>queue()</li>
+        <li>Ejemplo sencillo de esta posible invocación del método queue() y además, aparte vamos a ver que se
+            pueden encolar funciones en la cola tantas veces como queramos, aunque la cola esté en marcha.</li>
+    </ul> 
+    <button id="botonfade">Muestra y luego oculta con fadeIn y fadeOut</button>
+    <button id="botonslide">Muestra y luego oculta con slideUp slideDown</button>
+    <button id="botontamanocolaD3">Muestra el número de funciones en cola ahora mismo</button>
+    <div id="mensajeD3" class="mensaje">
+        En estos momentos no hay funciones de efectos en la cola por defecto.
+        <br>
+        <span class="notar">Pulsa repetidas veces los botones de arriba para ir metiendo funciones en la cola</span>
+    </div>
+    <div id="capaP8D3"></div>
+    
+    <h2>Demo 4</h2>
+    <ul class="capa">
+        <li>queue()</li>
+        <li>Vamos a ejecutar varios métodos para hacer una cola de efectos, pero vamos a
+            ponerles un retardo entre unos y otros.</li>
+    </ul> 
+    <div id="capaP8D4">
+        Vamos a ejecutar varios métodos para hacer una cola de efectos, pero vamos a
+        ponerles un retardo entre unos y otros.
+    </div> 
+
+    <h2>Demo 5</h2>
+    <ul class="capa">
+        <li>Otro ejemplo para colas de funciones para realizar todo tipo de efectos
+            complejos en jQuery.</li>
+    </ul> 
+    <button id="botontamanocolaD5">Muestra el número de funciones en cola ahora mismo</button>
+    <div id="mensajeD5" class="mensaje">
+    </div>
+    <div id="capaP8D5"></div>
+</body>
+</html>

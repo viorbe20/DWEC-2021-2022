@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='author' content='Virginia Ordoño Bernier'>
+    <meta name='statement' content='A partir de la página web proporcionada, completar el código JavaScript para que:
+    1. Cuando se pinche sobre el primer enlace, se oculte su sección relacionada
+    2. Cuando se vuelva a pinchar sobre el mismo enlace, se muestre otra vez esa sección de contenidos
+    3. Completar el resto de enlaces de la página para que su comportamiento sea idéntico al del primer enlace
+    4. Cuando una sección se oculte, debe cambiar el mensaje del enlace asociado (pista:propiedad innerHTML)'>
+    <link rel='stylesheet' type='text/css' href='../css/style.css' />
+    <title>Ejercicio 14 (pg 68)</title>
+    <script src="ej14_V2.js"></script>
+</head>
+
+<body>
+    <noscript>
+        <p>Bienvenido a Mi Sitio</p>
+        <p>La página que estás viendo requiere para su funcionamiento el uso de JavaScript.
+            Si lo has deshabilitado intencionadamente, por favor vuelve a activarlo.</p>
+    </noscript>
+    <header>
+        <h1>Ud1. Introducción a JavaScript_Ej14_DOMContentLoaded</h1>
+        <p>Virginia Ordoño Bernier</p>
+    </header>
+    <main>
+        <h2>A partir de la página web proporcionada</h2>
+        <ol>
+            <li>Cuando se pinche sobre el primer enlace, se oculte su sección relacionada</li>
+            <li>Cuando se vuelva a pinchar sobre el mismo enlace, se muestre otra vez esa sección de contenidos</li>
+            <li>Completar el resto de enlaces de la página para que su comportamiento sea idéntico al del primer enlace</li>
+            <li>Cuando una sección se oculte, debe cambiar el mensaje del enlace asociado (pista:propiedad innerHTML)</li>
+                <br>
+        </ol>
+        <hr>
+        <p id="contenidos_1" class="visible">[1] Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed
+            mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo
+            nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus
+            at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede.
+            Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper
+            quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper,
+            odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet,
+            consectetuer adipiscing elit. Duis scelerisque.</p>
+        <a id="enlace_1" href="#">Ocultar texto</a>
+
+        <br /><br />
+        <p id="contenidos_2" class="visible">[2] Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed
+            mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo
+            nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus
+            at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede.
+            Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper
+            quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper,
+            odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet,
+            consectetuer adipiscing elit. Duis scelerisque.</p>
+        <a id="enlace_2" href="#">Ocultar texto</a>
+
+        <br /><br />
+        <p id="contenidos_3" class="visible">[3] Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed
+            mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo
+            nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus
+            at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede.
+            Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper
+            quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper,
+            odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet,
+            consectetuer adipiscing elit. Duis scelerisque.</p>
+        <a id="enlace_3" href="#">Ocultar texto</a>
+    </main>
+</body>
+
+</html>

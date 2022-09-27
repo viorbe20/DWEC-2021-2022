@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='author' content='Virginia Ordoño Bernier'>
+    <link rel='stylesheet' type='text/css' href='../css/styles_parts.css' />
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src='../js/part2.js'></script>
+    <title>Manual jQuery: Parte 2</title>
+</head>
+
+<body>
+    <h1>Parte 2: Core de jQuery</h1>
+    <h2>Virginia Ordoño Bernier</h2>
+
+    <h5 class="capa">Utilizaremos el Core para realizar cosas útiles con objetos, clases, datos, etc, pero realmente lo
+        que más haremos será
+        utilizar la función jQuery, que es el pilar fundamental sobre el que se basarán las aplicaciones.</h5>
+
+    <h2>Demo 1</h2>
+    <ul class="capa">
+        <li>css() no forma parte del core, pero permite cambiar atributos CSS.</li>
+        <li>Mediante el id seleccionamos un elemento y con la etiqueta 'div' seleccionamos los dos.</li>
+    </ul>
+    <div id="elem1">A este elemento se le ha aplicado color de fondo y tamaño de fuente 18.</div>
+    <div id="elem2">A este elemento se le ha aplicado tamaño de fuente 18.</div>
+
+    <h2>Demo 2</h2>
+    <ul id="ulDemo2" class="capa">
+        <li>Mediante el id seleccionamos un elemento y con la etiqueta 'div' seleccionamos los dos.</li>
+        <li>string_de_elementos.appendTo('elemento a partir del cual queremos añadir'): añade elementos al html.</li>
+    </ul>
+
+    <h2>Demo 3</h2>
+    <ul class="capa">
+        <li>Uso de función pasando otra función</li>
+    </ul>
+    <p><b>Párrafo</b>!!</p>
+    <p>Otro <b>párrafo</b></p>
+
+    <h2>Demo 4</h2>
+    <ul class="capa">
+        <li>each(): realiza acciones con todos los elementos que concuerdan con la selección realizada con la función $().</li>
+        <li>Coloreamos los pares de un color y los impares de otro.</li>
+    </ul>
+    <p class="demo4">Primer párrafo</p>
+    <p class="demo4">Otro párrafo</p>
+    <p class="demo4">Tecer párrafo</p>
+    <p class="demo4">Uno más</p>
+    <p class="demo4">y acabo...</p>
+
+    <h2>Demo 5</h2>
+    <ul class="capa">
+        <li>Damos color a cada div en función del color escrito</li>
+        <li>Excepción 1: Si el texto del DIV es "white", entonces no queremos hacer nada con ese elemento.</li>
+        <li>Excepción 2: Si el texto del DIV es "nada", entonces detendremos el bucle y dejaremos de colorear los siguientes elementos.</li>
+        <li>Uso de each() y return</li>
+        <li>elemento = $(this): es el elemento que hace la llamada en ese momento. </li>
+        <li>elemento.html(): para obtener el texto</li>
+    </ul>
+    <div class="demo5">red</div>
+    <div class="demo5">white</div>
+    <div class="demo5">green</div>
+    <div class="demo5">orange</div>
+    <div class="demo5">nada</div>
+    <div class="demo5">red</div>
+    <div class="demo5">white</div>
+    <div class="demo5">green</div>
+    <div class="demo5">orange</div>
+
+    <h2>Demo 6</h2>
+    <ul class="capa">
+        <li>Método size(). Obtiene el número de elementos seleccionados</li>
+    </ul>
+    <p class="demo6">Esto es un párrafo</p>
+    <p class="demo6">Esto es un párrafo</p>
+    <p class="demo6">Esto es un párrafo</p>
+    <div type="text" id="demo6Div"></div>
+    <button type="button" id="demo6Btn">Mostrar</button>
+
+    <h2>Demo 7</h2>
+    <ul class="capa">
+        <li>Método length(). Obtiene el número de elementos de la página
+            que hemos seleccionado.</li>
+    </ul>
+    <p>Esto es un párrafo normal</p>
+    <p class="mitexto">Párrafo 1</p>
+    <p class="mitexto">Párrafo 2</p>
+    <button type="button" id="demo7Btn">Mostrar</button>
+    <div type="text" id="demo7Div"></div>
+
+    <h2>Demo 8</h2>
+    <ul class="capa">
+        <li>data(). Este método del objeto jQuery sirve tanto para guardar un dato en un elemento como para consultarlo. Según el número
+            de parámetros que reciba, realiza una u otra acción.</li>
+    </ul>
+    <p id="demo8Div" class="addNewColor">
+        En esta división (elemento id="capa") voy a guardar y leer datos sobre este elemento.
+    </p>
+    <button type="button" id="demo8Btn">Mostrar</button>
+    </div>
+
+    <h2>Demo 9</h2>
+    <ul class="capa">
+        <li>removeData(). Este método sirve para eliminar un dato de un elemento y su funcionamiento es tan simple como enviar por parámetro
+            el dato que se quiere eliminar del elemento.</li>
+    </ul>
+    <p id="division" class="addNewColor">
+        En esta división (elemento id="division") voy a guardar datos con la función data y luego los voy a
+        leer
+    </p>
+    <br>
+    <form name="formul">
+        <label>Escribe un valor a guardar, leer o eliminar:</label>
+        <input type="text" name="valor" id="valor">
+        <br><br>
+        <input type="button" value="Guardar dato" id="guardar">
+        <input type="button" value="Leer dato" id="leer">
+        <input type="button" value="Eliminar dato" id="eliminar">
+    </form>
+
+    <h2>Demo 10</h2>
+    <ul class="capa">
+        <li>removeData(). Este método sirve para eliminar un dato de un elemento y su funcionamiento es tan simple como enviar por parámetro
+            el dato que se quiere eliminar del elemento.</li>
+    </ul>
+    <a href="#" id="enlace1">Enlace 1</a>
+    <br>
+    <a href="#" id="enlace2">Enlace 2</a>
+    <br>
+    <a href="#" id="enlace3">Enlace 3</a>
+    <br>
+    <br>
+    <div id="mensaje">
+        Mensaje...
+    </div>
+    <br>
+    <button id="guardar">Guardar "midato" con valor "mivalor" en todos los enlaces</button>
+    <br><br>
+    <button id="guardarenlace1">Guardar "midato" con valor "otro valor" en el enlace 1</button>
+
+
+    <h2>Demo 11</h2>
+    <ul class="capa">
+        <li>Tipo objetos.</li>
+    </ul>
+    <a href="#" id="enlace1" class="enlacealmacenar">Enlace 1</a>
+    <br>
+    <a href="#" id="enlace2" class="enlacealmacenar">Enlace 2</a>
+    <br>
+    <a href="#" id="enlace3" class="enlacealmacenar">Enlace 3</a>
+    <br>
+    <br>
+    <div id="mensaje">
+    Mensaje...
+    </div>
+    <br>
+    <ol style="line-height: 200%;">
+        <li>
+            <a id="guardar" href="#">Guardar "midato" con valor "mivalor" en todos los enlaces</a>
+        </li>
+        <li>
+            <a id="guardarenlace1" href="#">Guardar "midato" con valor "otro valor" en el enlace 1</a>
+        </li>
+        <li>
+            <a id="guardarobjeto" href="#">Guardar "miobjeto" con una referencia a la capa de pruebas</a>
+        </li>
+        <li style="line-height: 100%;">
+            <a id="operarobjetoenlace1" href="#">Recuperar un objeto del enlace1 para hacer cosas con él
+                <SPAN style="font-size: 8pt; font-weight: bold">
+                    PULSAR ESTE ENLACE SÓLO DESPUÉS DE HABER ALMACENADO EL OBJETO EN LOS ENLACES POR MEDIO DEL ENLACE DE
+                    ESTA LISTA MARCADO COMO 3)
+                </SPAN>
+            </a>
+        </li>
+        <li style="line-height: 100%;">
+            <a id="operarobjetoenlace2" href="#">Recuperar un objeto del enlace2 para hacer cosas con él
+                <SPAN style="font-size: 8pt; font-weight: bold">
+                PULSAR ESTE ENLACE SÓLO DESPUÉS DE HABER ALMACENADO EL OBJETO EN LOS ENLACES POR MEDIO DEL ENLACE DE
+                ESTA LISTA MARCADO COMO 3)
+                </SPAN>
+            </a>
+        </li>
+    </ol>
+    <br>
+    <br>
+    <div id="capapruebas">
+        Este es el texto de una capa de pruebas... con id="capapruebas"
+    </div>
+</body>
+
+</html>

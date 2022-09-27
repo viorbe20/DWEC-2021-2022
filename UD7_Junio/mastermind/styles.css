@@ -1,0 +1,122 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+main {
+  display: flex;
+  background-color: rgba(166, 255, 0, 0.37);
+  width: auto;
+}
+
+#mainContainer {
+  display: flex;
+}
+
+#container1,
+#container2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+#bets,
+#solution {
+  display: flex;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  padding: 4%;
+  margin-left: 20px;
+  margin-bottom: 2%;
+}
+
+#colorsPalette {
+  background-color: rgba(75, 90, 226, 0.623);
+  width: 15%;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.currentBetColor {
+  height: 60px;
+  width: 60px;
+  border-radius: 50px;
+  margin-right: 10px;
+  margin-left: 10ox;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.oldBetColor {
+  height: 60px;
+  width: 60px;
+  border-radius: 50px;
+  margin-right: 10px;
+  margin-left: 10ox;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.currentBalls {
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  margin-right: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.oldBalls {
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  margin-right: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.colors {
+  background-color: rgba(128, 128, 128, 0.623);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  height: 70px;
+  width: 70px;
+  border-radius: 50px;
+  margin-bottom: 10px;
+}
+
+/* From cssbuttons.io by @martinval9 */
+/* Hide the default checkbox */
+
+/* From cssbuttons.io by @Shakil-Babu */
+.btn {
+  background-color: green;
+  color: white;
+  padding: 14px 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.4s;
+}
+
+#attempts{
+background-color: rgba(75, 90, 226, 0.623);
+color: white;
+text-align: center;
+padding: 5px;
+
+font-size: 40px;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+width: 200px;
+position: fixed;
+top: 20px;
+left: 20px;
+}

@@ -1,0 +1,101 @@
+body {
+  background-color: black;
+}
+
+header {
+  background: url("../img/jsIcon.png") no-repeat 20% 0%;
+  background-size: 3%;
+}
+header h1 {
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+header p {
+  font-size: 20px;
+  text-align: center;
+  color: white;
+}
+
+main {
+  background-color: #fece1a;
+  display: flex;
+  flex-wrap: wrap;
+  background-size: cover;
+  justify-content: center;
+  padding-top: 40px;
+}
+main a {
+  text-decoration: none;
+}
+main article {
+  background-color: #0d701e;
+  margin: 20px;
+  width: 400px;
+  height: 300px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+main article h2 {
+  background-color: #181a1c;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+main #ud1 {
+  background: url("../img/img_ud1.png") no-repeat;
+  background-size: cover;
+}
+main #ud2 {
+  background: rgb(132, 132, 238) url("../img/img_ud2.png") no-repeat;
+  background-size: cover;
+}
+main #ud3 {
+  background: rgb(132, 132, 238) url("../img/img_ud3.jpg") no-repeat;
+  background-size: cover;
+}
+main #ud4 {
+  background: rgb(132, 132, 238) url("../img/img_ud4.jpg") no-repeat;
+  background-size: cover;
+}
+main #ud5 {
+  background: rgb(132, 132, 238) url("../img/img_ud5.jpg") no-repeat;
+  background-size: cover;
+}
+main #ud6 {
+  background: rgb(132, 132, 238) url("../img/img_ud6.jpg") no-repeat;
+  background-size: cover;
+}
+main #ud7 {
+  background: rgb(132, 238, 144) url("../img/img_ud7.png") no-repeat;
+  background-size: 100%;
+}
+main #challenges {
+  background: url("../img/img_ud8.png") no-repeat;
+  background-size: cover;
+}
+
+.mouseenter h2 {
+  background-color: purple;
+  color: yellow;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.index {
+  position: fixed;
+  text-decoration: none;
+  padding: 1%;
+  background-color: purple;
+  color: white;
+  font-weight: bold;
+  left: 3%;
+  top: 17%;
+}
+.index:hover {
+  background-color: white;
+  color: purple;
+}/*# sourceMappingURL=style.css.map */

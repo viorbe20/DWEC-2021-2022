@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='author' content='Virginia Ordoño Bernier'>
+    <meta name='content' content='Contenidos conceptos javaScript: UD2'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/night-owl.min.css">
+    <link rel='stylesheet' type='text/css' href='css/style.css' />
+    <title>JavaScript. Contenidos UD2</title>
+</head>
+
+<body>
+    <noscript>
+        <p>Bienvenido a Mi Sitio</p>
+        <p>La página que estás viendo requiere para su funcionamiento el uso de JavaScript.
+            Si lo has deshabilitado intencionadamente, por favor vuelve a activarlo.</p>
+    </noscript>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <h1>JavaScript. Contenidos UD2</h1>
+    <div id="container">
+        <div id="indexBox">
+            <h2 id="indice">Índice</h2>
+            <ol>
+                <li>
+                    <a href="#destructuring">Destructuring assignment</a>
+                </li>
+                <li>
+                    <a href="#template">Template Literals</a>
+                </li>
+                <li>
+                    <a href="#this">This</a>
+                </li>
+                <li>
+                    <a href="#comments">Tres tipos de comentarios</a>
+                </li>
+                <li>
+                    <a href="#typeof">Type of</a>
+                </li>
+                <li>
+                    <a href="#primitives">Valores primitivos vs objetos (inmutabilidad)</a>
+                </li>
+                <li>
+                    <a href="#nullish">Valores nullish</a>
+                </li>
+                <li>
+                    <a href="#falsy">Valores falsy</a>
+                </li>
+                <li>
+                    <a href="#hoisting">Hoisting</a>
+                </li>
+                <li>
+                    <a href="#coalescingOperator">The Nullish Coalescing Operator (??)</a>
+                </li>
+                <li>
+                    <a href="#logicalNullishOperator">The Logical Nullish Assignment Operator (??=)</a>
+                </li>
+                <li>
+                    <a href="#default">Valores por defecto en los parámetros</a>
+                </li>
+                <li>
+                    <a href="#rest">Operador rest o parametros rest</a>
+                </li>
+                <li>
+                    <a href="#spread">Spread Operador</a>
+                </li>
+                <li>
+                    <a href="#ternario">Operador ternario</a>
+                </li>
+                <li>
+                    <a href="#forLoop">Bucle for. Evitando el for clásico</a>
+                </li>
+            </ol>
+        </div>
+
+        <main>
+            <!--destructuring-->
+            <div id="destructuring" class="conceptTitle">
+                <h3>Destructuring assignment</h3>
+
+                <ul>
+                    <li>Permite obtener los datos de objetos o arrays de manera directa y múltiple, para extraerlos a
+                        variables
+                        o constantes.
+                    </li>
+                </ul>
+
+                <pre><code id="demo1.1">let [a, b] = [1, 2]; 
+console.log(a, b); //Result: 1, 2
+</code></pre>
+
+                <ul>
+                    <li>Permite asignar valores por defecto.</li>
+                </ul>
+
+                <pre><code>let [c = 0, d = 4] = [2]; 
+console.log(c, d); //Result: 2, 4
+</code></pre>
+
+
+                <ul>
+                    <li>Intercambio de valores entre variables.
+                    </li>
+                </ul>
+
+                <pre><code>let e = 1;
+let f = 2;       
+[e, f] = [f, e];
+
+console.log(`e = ${e}, f = ${f}`); //Result: e = 2, f = 1
+</code></pre>
+
+                <ul>
+                    <li>Destructuring con <i>rest operator</i>.</li>
+                </ul>
+
+                <pre><code>let [blue, red, ...rest] = ["azul", "rojo", "verde", "gris", "naranja"];
+console.log(blue); // azul
+console.log(red); // rojo
+console.log(rest); // ["verde", "gris", "naranja"]
+</code></pre>
+
+                <ul>
+                    <li>Destructuring de objetos (asignación a una variable el contenido de un array)</li>
+                </ul>
+
+                <pre><code>const object1 = {number:10, boolean:true, string:"Hi"}
+const {number, string} = object1;
+
+console.log(`number = ${number}`); //number = 10
+console.log(`string = ${string}`); //string = Hi
+</code></pre>
+
+
+                <ul>
+                    <li>Destructuring de objetos asignando a nuevos nombres de variables.</li>
+                </ul>
+
+                <pre><code>const object2 = {name:"Carlota", lastname:"García"}
+const {name: nm, lastname: ln} = object2;
+
+console.log(`nm = ${nm}`); //nm = Carlota
+console.log(`ln = ${ln}`); //ln = García
+</code></pre>
+
+                <ul>
+                    <li>Destructuring con objetos y <i>rest operator</i>.</li>
+                </ul>
+
+                <pre><code>({aa, bb, ...rest} = {aa: 11, bb: 22, cc: 33, dd: 44});
+
+console.log(aa); // 11
+console.log(bb); // 22
+console.log(rest); // {cc: 33, dd: 44}
+</code></pre>
+                <br>
+                <a id="link" href="#indice">Índice</a>
+                <a id="github"
+                    href="https://github.com/iesgrancapitan-dwec/sitio-de-repaso-viorbe20/blob/main/UD2_Junio/contenidosUD2/js/destructuring.js">Ver
+                    código</a>
+                <br>
+            </div>
+
+            <!--template literals-->
+            <div id="template" class="conceptTitle">
+                <h3>Template Literals</h3>
+
+
+                <ul>
+                    <li>Permiten trabajar con cadenas literales de más de una línea además de incluir variables evitando
+                        concatenaciones.
+                    </li>
+                </ul>
+
+                <pre><code>$nombre = "Virginia";
+$ciclo = "2ºDAW";
+$instituto = "Gran Capitán";
+
+console.log(
+`Hola me llamo ${nombre}, 
+estudio ${ciclo} en el instituto ${instituto}.`
+);
+
+//"Hola me llamo Virginia, 
+estudio 2ºDAW en el instituto Gran Capitán."
+</code></pre>
+                <br>
+                <a id="link" href="#indice">Índice</a>
+                <a id="github"
+                    href="https://github.com/iesgrancapitan-dwec/sitio-de-repaso-viorbe20/blob/main/UD2_Junio/contenidosUD2/js/templateLiterals.js">Ver
+                    código</a>
+                <br>
+            </div>
+
+            <!--this-->
+            <div id="this" class="conceptTitle">
+                <h3>This</h3>
+                <ul>
+                    <li>De manera general, <code>this</code> hace referencia al elemento que invoca una función.</li>
+                    <li>En el método de un objeto, <code>this</code> hace referencia al objeto mismo.
+                    </li>
+                </ul>
+
+                <pre><code>const person = {
+firstName: "John",
+lastName : "Doe",
+fullName : function() {
+console.log(this.firstName + " " + this.lastName);
+}
+};
+
+console.log(person.fullName());  //Result John Doe</code></pre>
+
+                <ul>
+                    <li>Si aparece solo, <code>this</code> hace referencia referencia al objeto global Window.
+                    </li>
+                </ul>
+
+                <pre><code>let x = this;
+
+console.log(x);  //Result Window</code></pre>
+                <br>
+                <a id="link" href="#indice">Índice</a>
+                <a id="github"
+                    href="https://github.com/iesgrancapitan-dwec/sitio-de-repaso-viorbe20/blob/main/UD2_Junio/contenidosUD2/js/this.js">Ver
+                    código</a>
+                <br>
+            </div>
+
+            <!--comments-->
+            <div id="comments" class="conceptTitle">
+                <h3>Tres tipos de comentarios</h3>
+
+
+                <ul>
+                    <li>El primero de ellos se caracteriza porque comienza con // y sólo comenta la linea actual desde
+                        donde
+                        se
+                        escribe.</li>
+                </ul>
+                <pre><code>// Comentarios cortos de una sola línea. Suelen explicar la línea siguiente.
+let a = 1;
+let x = 45; // También se utilizan al final de una línea.
+</code></pre>
+
+                <ul>
+                    <li>Comentarios múltiples de varias líneas consecutivas.</li>
+                </ul>
+
+                <pre><code>/*Suelen utilizarse para explicaciones largas que requieren bastante*/</code></pre>
+
+                <ul>
+                    <li>Comentarios JSDoc. Se utilizan para indicar a la función de autocompletado cómo debe utilizarse
+                        la
+                        función y rellenarse en el editor de scripts.</li>
+                    <li>De esta forma se muestran los argumentos requeridos de una manera específica en el editor de
+                        código.
+                    </li>
+                </ul>
+
+                <pre><code>/**
+ * Devuelve x elevado a la potencia de n.
+ *
+ * @param {number} x El número a elevar.
+ * @param {number} n La potencia, debe ser un número natural.
+ * @return {number} x elevado a la potencia de n.
+ */
+function pow(x, n) {
+  ...
+}</code></pre>
+                <br>
+                <a id="link" href="#indice">Índice</a>
+                <a id="github"
+                    href="https://github.com/iesgrancapitan-dwec/sitio-de-repaso-viorbe20/blob/main/UD2_Junio/contenidosUD2/js/comments.js">Ver
+                    código</a>
+                <br>
+            </div>
+
+            <!--typeof-->
+            <div id="typeof" class="conceptTitle">
+                <h3>Type of</h3>
+
+                <ul>
+                    <li>Indica si un dato es primitivo o no.</li>
+                    <li>Detecta: number, biginit, string, undefined, boolean.</li>
+                </ul>
+                <pre><code>let a = 1;
+console.log(typeof a); //number
+</code></pre>
+
+                <ul>
+                    <li>No sirve para identificar un tipo de objeto. Para ello usamos <code>instanceof</code>.</li>
+                </ul>
+                <pre><code>today = new Date();
+console.log("OBJETO - " + (today instanceof today.constructor) + " - VALOR: " + today);
+// OBJETO - true - VALOR: Sun May 01 2022 19:14:17 GMT+0200
+</code></pre>
+                <br>
+                <a id="link" href="#indice">Índice</a>
+                <a id="github"
+                    href="https://github.com/iesgrancapitan-dwec/sitio-de-repaso-viorbe20/blob/main/UD2_Junio/contenidosUD2/js/typeOf.js">Ver
+                    código</a>
+                <br>
+            </div>
+
+            <!--primitives-->
+            <div id="primitives" class="conceptTitle">
+                <h3>Valores primitivos vs objetos (inmutabilidad)</h3>
+
+
+                <ul>
+                    <li>Entendemos por mutabilidad aquella capacidad para cambiar el valor o el estado de los elementos
+                        de
+                        un
+                        lenguaje de programación.</li>
+                    <li>Los datos primitivos en Javascript son inmutables. Cuando modificamos un dato primitivo, en
+                        realidad
+                        estamos creando otro nuevo.</li>
+                    <li>Con la palabra reservada <code>const</code> podemos establecer una variable como inmutable.</li>
+                    <li>Los objetos, arrays y otras estructuras no primitivas son mutables. Los objetos son de tipo de
+                        referencia, lo que significa que a una variable a la que se le asigna un objeto, en realidad se
+                        le
+                        está
+                        definiendo una referencia a ese objeto. Por este el motivo, al comparar dos objetos distintos
+                        que
+                        contienen los mismos valores, siempre será <code>false</code></li>
+                </ul>
+                <pre><code>//Primitivos
+let $day1 = "monday";
+let $day2 = "monday";
+console.log($day1 == $day2); //Result true
+
+//Objetos
+let $student1 = {name:"Hugo", age:9};
+let $student2 = {name:"Hugo", age:9};
+console.log($student2 == $student1); //Result  false</code></pre>
+
+                <br>
+                <a id="link" href="#indice">Índice</a>
+                <a id="github"
+                    href="https://github.com/iesgrancapitan-dwec/sitio-de-repaso-viorbe20/blob/main/UD2_Junio/contenidosUD2/js/primitives.js">Ver
+                    código</a>
+                <br>
+            </div>
+
+            <!--nullish-->
+            <div id="nullish" class="conceptTitle">
+                <h3>Valores nullish</h3>
+
+
+                <ul>
+                    <li>Valores nullish son <code>undefined</code> y <code>null</code>.</li>
+                    <li>Representa un valor nulo o sin definir. Siempre son <code>falsy</code>.</li>
+                    <li>La mejor forma de comprobar si un valor es <code>nullish</code> es con el <a href="#??"
+                            class="anchor"><code>Nullish coalescing operator</code></a>.</li>
+                </ul>
+                <br>
+                <a id="link" href="#indice">Índice</a>
+                <br>
+            </div>
+
+            <!--falsy-->
+            <div id="falsy" class="conceptTitle">
+                <h3>Valores falsy</h3>
+                <ul>
+                    <li>Los valores <i>falsy</i> son aquellos con valor <i>false</i> en un contexto booleano.</li>
+                    <li>Valores <i>falsy</i>: <code>undefined, null, NAN, 0, -0, 0n, "", '', ``, false</code>.</li>
+                    <li>Para comprobar si un valor es <code>falsy</code> usamos método <code>isFalsy(valor)</code>.
+                    </li>
+                </ul>
+                <pre><code>//Valores falsy
+let ceroValue = 0;
+let negativeCero = -0;
+let ceroBigInt = 0n;
+let quotationMarks = "";
+let singleQuotationMarks = "";
+let backTicks = ``;
+let falseValue = false;
+
+//Valores truthy
+let nullValue = null;
+let undefinedValue = undefined;
+let nanValue = NaN;
+let infValue = Infinity;
+
+//Función que indica si un valor es false o true
+let isFalsy = (value) => {
+  if (value == false) {
+    console.log("Es falsy");
+  } else {
+    console.log("No es falsy");
+  }
+};
+
+//Recorremos los valores falsy
+let falsyValues = [
+  ceroValue,
+  negativeCero,
+  ceroBigInt,
+  quotationMarks,
+  singleQuotationMarks,
+  backTicks,
+  falseValue,
+];
+
+for (e of falsyValues) {
+  isFalsy(e); //OUTPUT: 7 Es falsy
+}
+                      </code></pre>
+
+                <br>
+                <a id="link" href="#indice">Índice</a>
+                <a id="github"
+                    href="https://github.com/iesgrancapitan-dwec/sitio-de-repaso-viorbe20/blob/main/UD2_Junio/contenidosUD2/js/falsyValues.js">Ver
+                    código</a>
+                <br>
+            </div>
+            <!--hoisting-->
+            <div id="hoisting" class="conceptTitle">
+                <h3>Hoisting</h3>
+
+                <ul>
+                    <li>El <i>hoisting</i> es el comportamiento que tiene por defecto de JavaScript mediante el cual
+                        mueve
+                        las
+                        declaraciones al principio del código.</li>
+                    <li>JavaScript solamente eleva declaraciones, no inicializaciones.</li>
+                    <li>Las declaraciones de variables y funciones son asignadas en memoria durante la fase de
+                        compilación,
+                        pero
+                        quedan exactamente en dónde las has escrito en el código.</li>
+                    <li>Javascript permite que una variable pueda ser declarada después de ser usada.</li>
+                </ul>
+                <pre><code>let x = 1; // Inicializa x
+let y;// Eleva la declaración
+console.log(x + " " + y); // '1 undefined'
+y = 2; // Inicializa y</code></pre>
+
+                <br>
+                <a id="link" href="#indice">Índice</a>
+                <a id="github"
+                    href="https://github.com/iesgrancapitan-dwec/sitio-de-repaso-viorbe20/blob/main/UD2_Junio/contenidosUD2/js/hoisting.js">Ver
+                    código</a>
+                <br>
+            </div>
+            <!--coalescingOperator-->
+            <div id="coalescingOperator" class="conceptTitle">
+                <h3>The Nullish Coalescing Operator (??)</h3>
+
+
+                <ul>
+                    <li>Valores nullish son <code>undefined</code> y <code>null</code>.</li>
+                    <li>Para comprobar si un valor es <code>nullish</code>, usamos el operador <i>nullish coalescing</i>
+                        . Éste se
+                        escribe con un doble signo de cierre de interrogación ??.</li>
+                    <li>El operador devuelve la parte derecha de la operación cuando en la parte izquierda hay un valor
+                        <i>nullish</i>. En caso contrario devuelve la parte izquierda.
+                    </li>
+                </ul>
+                <pre><code>const a = null ?? "second";
+console.log(a); // second;
+
+const b = "first" ?? "second";
+console.log(b); // first;</code></pre>
+
+                <br>
+                <a id="link" href="#indice">Índice</a>
+                <a id="github"
+                    href="https://github.com/iesgrancapitan-dwec/sitio-de-repaso-viorbe20/blob/main/UD2_Junio/contenidosUD2/js/coalescingOperator.js">Ver
+                    código</a>
+                <br>
+            </div>
+
+            <!--logicalNullishOperator-->
+            <div id="logicalNullishOperator" class="conceptTitle">
+                <h3>The Logical Nullish Assigment Operator (??=)</h3>
+                <ul>
+                    <li>Valores nullish son <code>undefined</code> y <code>null</code>.</li>
+                    <li>El operador solo asigna cuando en la parte izquierda hay un valor
+                        <i>nullish</i>.
+                    </li>
+                </ul>
+                <pre><code>let x = 12;
+let y = null;
+let z = 13;
+
+x ??= z; 
+console.log(x); // 12
+
+y ??= z;
+console.log(y); // 13</code></pre>
+                <br>
+                <a id="link" href="#indice">Índice</a>
+                <a id="github"
+                    href="https://github.com/iesgrancapitan-dwec/sitio-de-repaso-viorbe20/blob/main/UD2_Junio/contenidosUD2/js/assigmentOperator.js">Ver
+                    código</a>
+                <br>
+            </div>
+
+            <!--default-->
+            <div id="default" class="conceptTitle">
+                <h3>Valores por defecto en los parámetros</h3>
+                <ul>
+                    <li>Permite que parámetros con nombre se inicien con valores predeterminados si no se pasa ningún
+                        valor
+                        o <code>undefined</code>.</li>
+                    <li>Si no se proporciona ningún valor al elemento cuando se llama, el valor del elemento sería
+                        <code>undefined</code>
+                    </li>
+                </ul>
+                <pre><code>function multiply(a, b = 2) {
+return a * b
+}
+  
+console.log(multiply(5, 2)); // 10
+console.log(multiply(5)); // 10 </code></pre>
+
+                <br>
+                <a id="link" href="#indice">Índice</a>
+                <a id="github"
+                    href="https://github.com/iesgrancapitan-dwec/sitio-de-repaso-viorbe20/blob/main/UD2_Junio/contenidosUD2/js/default.js">Ver
+                    código</a>
+                <br>
+            </div>
+
+            <!--rest-->
+            <div id="rest" class="conceptTitle">
+                <h3>Operador rest o parametros rest</h3>
+
+                <ul>
+                    <li>El parámetro <i>rest</i> representa un conjunto indefinido de argumentos en forma de array .
+                    </li>
+                    <li>Si no se proporciona ningún valor al elemento cuando se llama, el valor del elemento sería
+                        <code>undefined</code>
+                    </li>
+                    <li>Solo el último parámetro puede ser <i>rest</i>.</li>
+                </ul>
+                <pre><code>function restFunction(param1, param2, ...allParam) {
+  console.log("param1", param1)
+  console.log("param2", param2)
+  console.log("allParam", allParam)
+}
+
+restFunction("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday);
+//Result
+//param1 Monday
+//param2 Tuesday
+//allParam (5) ['Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];</code></pre>
+
+                <br>
+                <a id="link" href="#indice">Índice</a>
+                <a id="github"
+                    href="https://github.com/iesgrancapitan-dwec/sitio-de-repaso-viorbe20/blob/main/UD2_Junio/contenidosUD2/js/rest.js">Ver
+                    código</a>
+                <br>
+            </div>
+
+            <!--spread-->
+            <div id="spread" class="conceptTitle">
+                <h3>Spread Operator</h3>
+                <ul>
+                    <li>Convierte un array o un objeto en el conjunto de valores que contiene.</li>
+                    <li>Permite fusionar dos arrays en uno solo, añadir nuevos elementos, sumar y clonar arrays.</li>
+                </ul>
+                <pre><code>//Dos arrays en uno
+const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+const weekend = ["Saturday", "Sunday"];
+const week = [...days, ...weekend];
+console.log(week); // (7) [Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+//Clonar arrays
+const originalArray = ["blue", "red", "orange"];
+const clonedArray = [...originalArray];
+console.log(clonedArray); // (3) ['blue', 'red', 'orange']
+
+</code></pre>
+
+                <br>
+                <a id="link" href="#indice">Índice</a>
+                <a id="github"
+                    href="https://github.com/iesgrancapitan-dwec/sitio-de-repaso-viorbe20/blob/main/UD2_Junio/contenidosUD2/js/rest.js">Ver
+                    código</a>
+                <br>
+            </div>
+
+            <!--ternario-->
+            <div id="ternario" class="conceptTitle">
+                <h3>Operador ternario</h3>
+
+
+                <ul>
+                    <li>Es una expresión consistente en tres partes: la condición, valor <i>if true</i> y valor <i>if
+                            false</i>.</li>
+                    <li>La sintaxis es la siguiente:</li>
+                </ul>
+                <pre><code>condition ? value if true : value if false</code></pre>
+
+                <pre><code>let result = (10 > 0) ? true : false;
+console.log(result) //true</code></pre>
+                <br>
+                <a id="link" href="#indice">Índice</a>
+                <a id="github"
+                    href="https://github.com/iesgrancapitan-dwec/sitio-de-repaso-viorbe20/blob/main/UD2_Junio/contenidosUD2/js/ternario.js">Ver
+                    código</a>
+                <br>
+            </div>
+
+            <!--forLoop-->
+            <div id="forLoop" class="conceptTitle">
+                <h3>Bucle for. Evitando el for clásico</h3>
+                <ul>
+                    <li><code>forEach()</code>: llama a la función proporcionada una vez e itera sobre cada elemento del
+                        array.</li>
+                </ul>
+                <pre><code>let colores = ['azul', 'rojo', 'verde'];
+colores.forEach(color=>console.log('for each=>' + color));
+// 'azul'
+// 'rojo'
+// 'verde'</code></pre>
+
+                <ul>
+                    <li><code>for in():</code>recorre todas las propiedades enumerables de un objeto.</li>
+                </ul>
+                <pre><code>let colores = ['azul', 'rojo', 'verde'];
+for(let color in colores) {
+console.log('for in=>' + colores[color]);
+}
+// 'azul'
+// 'rojo'
+// 'verde'</code></pre>
+
+                <ul>
+                    <li><code>for of():</code>recorre todas estructuras de datos que son iterables, como arrays,
+                        cadenas,
+                        mapas, listas de nodos y más..</li>
+                </ul>
+                <pre><code>let colores = ['azul', 'rojo', 'verde'];
+for (let color of colores) {
+console.log('for of=>' + color);
+}
+// 'azul'
+// 'rojo'
+// 'verde'</code></pre>
+                <br>
+                <a id="link" href="#indice">Índice</a>
+                <a id="github"
+                    href="https://github.com/iesgrancapitan-dwec/sitio-de-repaso-viorbe20/blob/main/UD2_Junio/contenidosUD2/js/forLoop.js">Ver
+                    código</a>
+                <br>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

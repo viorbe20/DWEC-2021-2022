@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='author' content='Virginia Ordoño Bernier'>
+    <link rel='stylesheet' type='text/css' href='../css/styles_parts.css' />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src='../js/part7.js'></script>
+    <title>Manual jQuery: Parte 7</title>
+</head>
+
+<body>
+    <h1>Parte 7: Desarrollo de plugins en jQuery</h1>
+    <h2>Virginia Ordoño Bernier</h2>
+
+    <h5 class="capa">Los plugins son la utilidad que pone jQuery a disposición de los desarrolladores para ampliar las funcionalidades del
+        framework. Por lo general servirán para hacen cosas más complejas necesarias para resolver necesidades específicas,
+        pero las hacen de manera que puedan utilizarse en el futuro en cualquier parte y por cualquier web..
+    </h5>
+
+    <h2>Demo 1</h2>
+    <ul class="capa">
+        <li>El plugin que vamos a construir sirve para hacer que los elementos de la página parpadeen, esto es, que desaparezcan y
+            vuelvan a aparecer en un breve instante.</li>
+    </ul>
+    <p class="parpadear">Hola que tal, esto parpadeó gracias a jQuery!</p>
+    <p>Parafo normal que no va a parpadear.</p>
+    <p class="parpadear">Sí parpadea</p>
+    <p>Parafo normal que no va a parpadear tampoco...</p>
+    <div class="parpadear" style="background-color: #ff9966; padding: 10px;">
+        Esta capa también tiene la clase parpadear, con lo que ya se sabe...
+    </div>
+    <p>
+        <input type="button" value="Parpadea de nuevo" id="botonparpadear">
+    </p>
+
+    <h2>Demo 2</h2>
+    <ul class="capa">
+        <li>Plugin para conseguir que un campo textarea de
+            formulario informe en todo momento de caracteres que ha escrito el usuario. Es decir, vamos a hacer un método del
+            objeto jQuery que servirá para decirle a los campos de texto textarea que se expandan para convertirse en un textarea
+            que cuente los caracteres en una capa de texto de al lado.</li>
+    </ul>
+    <form>
+        <textarea rows=5 cols=30 id="mitextarea">hola</textarea>
+        <br>
+        <br>
+        <textarea rows=5 cols=30 id="otrotextarea">Otra cuenta...</textarea>
+    </form>
+
+   
+
+</body>
+
+</html>

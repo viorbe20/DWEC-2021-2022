@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='author' content='Virginia Ordoño Bernier'>
+    <link rel="stylesheet" href="css/style_parts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/night-owl.min.css">
+    <title>3. Selectores de jQuery (Conceptos)</title>
+</head>
+
+<body>
+    <noscript>
+        <p>Bienvenido a Mi Sitio</p>
+        <p>La página que estás viendo requiere para su funcionamiento el uso de JavaScript.
+            Si lo has deshabilitado intencionadamente, por favor vuelve a activarlo.</p>
+    </noscript>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <h1>3. Selectores de jQuery (Conceptos)</h1>
+    <a href="conceptos_jq_index.html">Volver a Conceptos jQuery</a>
+
+    <div id="container">
+
+        <div id="indexBox">
+            <h2 id="indice">Índice</h2>
+            <ol>
+                <li>
+                    <a href="#prop">$("selector").prop()</a>
+                </li>
+                <li>
+                    <a href="#removeProp">$("selector").removeProp(propiedad/valor)</a>
+                </li>
+                <li>
+                    <a href="#fadeIn">$("selector").fadeIn()</a>
+                </li>
+                <li>
+                    <a href="#fadeOut">$("selector").fadeOut()</a>
+                </li>
+                <li>
+                    <a href="#fadeTo">$("selector").fadeTo()</a>
+                </li>
+                <li>
+                    <a href="#fadeToggle">$("selector").fadeToggle()</a>
+                </li>
+                <li>
+                    <a href="#css">$("selector").css()</a>
+                </li>
+                <li>
+                    <a href="#objeto-literal">$("selector").css({objeto literal})</a>
+                </li>
+            </ol>
+        </div>
+
+        <main>
+
+            <!--prop-->
+            <div id="prop" class="conceptTitle">
+                <h3>$("selector").prop()</h3>
+
+                <ul>
+                    <li>Booleano. Devuelve <i>true</i> o <i>false</i> respecto a las propiedades del elemento
+                        seleccionado.</li>
+                    <li>Solo devuelve EL VALOR DEL PRIMER ELEMENTO COINCIDENTE.</li>
+                    <li>Con dos parámetros, establece valor.</li>
+                    <li>Uso: propiedades DOM (<i>selectedIndex</i>, <i>tagName</i>, <i>nodeName</i>, <i>nodeType</i>,
+                        <i>ownerDocument</i>, <i>defaultChecked</i>, <i>defaultSelected</i> )
+                    </li>
+                    <li>Para atributos HTML se usa <a href="conceptos_jq_p4.html#attr1"><code>attr()</code></a>.</li>
+                </ul>
+
+                <pre><code>//Get property
+$("selector").prop("checked"); //True or false
+
+//Set property
+$("selector").prop("disabled", "true");</pre></code>
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_prop_attr">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--removeProp-->
+            <div id="removeProp" class="conceptTitle">
+                <h3>$("selector").removeProp()</h3>
+
+                <ul>
+                    <li>Elimina la propiedad del elemento seleccionado.</li>
+                </ul>
+
+                <pre><code>$("selector").removeProp("disabled");</pre></code>
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_removeprop">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--fadeIn-->
+            <div id="fadeIn" class="conceptTitle">
+                <h3>$("selector").fadeIn()</h3>
+
+                <ul>
+                    <li>Hace que el elemento se esconda con un efecto de desvanecimiento.</li>
+                </ul>
+
+                <pre><code>//No parameters
+$("selector").fadeIn();
+
+//Duration
+$("selector").fadeIn(milliseconds | "slow" | "fast");
+
+//Easing. 
+$("selector").fadeIn("swing" | "linear");
+</pre></code>
+                <a class="w3s"
+                    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_fadeout_fadein_callback">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--fadeOut-->
+            <div id="fadeOut" class="conceptTitle">
+                <h3>$("selector").fadeOut()</h3>
+
+                <ul>
+                    <li>Hace que el elemento aparezca con un efecto de desvanecimiento.</li>
+                </ul>
+
+                <pre><code>//No parameters
+$("selector").fadeOut();
+
+//Duration
+$("selector").fadeOut(milliseconds | "slow" | "fast");
+
+//Easing. 
+$("selector").fadeOut("swing" | "linear");
+            </pre></code>
+                <a class="w3s" href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_fadeout">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--fadeTo-->
+            <div id="fadeTo" class="conceptTitle">
+                <h3>$("selector").fadeTo()</h3>
+
+                <ul>
+                    <li>Permite dar opacidad al desvanecimiento (valor entre 0 y 1).</li>
+                    <li>Son obligatorios los parámetro de duración: modo y velocidad.</li>
+                    <li> Valores: "slow", "fast", o millisegundos.</li>
+                </ul>
+
+                <pre><code>$("selector").fadeTo("slow", 0.15);</pre></code>
+                <a class="w3s" href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_fadeto">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--fadeToggle-->
+            <div id="fadeToggle" class="conceptTitle">
+                <h3>$("selector").fadeToggle()</h3>
+
+                <ul>
+                    <li>Alterna entre <code>fadeIn()</code> y <code>fadeOut()</code>.</li>
+                    <li>Permite los parámetro de duración: modo y velocidad.</li>
+                    <li>Valores: "slow", "fast", o millisegundos.</li>
+                </ul>
+
+                <pre><code>//No parameters
+$("selector").fadeToggle();
+
+//Parameters
+$("selector").fadeToggle(3000);</pre></code>
+
+                <a class="w3s" href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_fadetoggle">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--css-->
+            <div id="css" class="conceptTitle">
+                <h3>$("selector").css()</h3>
+
+                <ul>
+                    <li>Permite realizar diferentes operaciones con los attributos css.</li>
+                </ul>
+
+                <pre><code>//Get value of property
+$("selector").css("background-color"); //rgb() value
+
+//Set value
+$("selector").css("color", "red");</pre></code>
+
+                <a class="w3s" href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_css_setcolor">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+
+            <!--css-objeto literal-->
+            <div id="objeto-literal" class="conceptTitle">
+                <h3>$("selector").css({})</h3>
+
+                <ul>
+                    <li>Permite establecer varias propiedades al mismo tiempo.</li>
+                </ul>
+
+                <pre><code>$(selector).css({
+"background-color": "green", 
+"font-size": "20px"
+});</pre></code>
+                <a class="w3s" href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_css_set_multiple">Ejemplo
+                    W3School</a>
+
+                <br><br><a href="#indice">Índice</a><br>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

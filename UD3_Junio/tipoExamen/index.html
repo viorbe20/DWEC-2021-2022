@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='author' content='Virginia Ordoño Bernier'>
+    <meta name='content' content='Ejercicio que demuestra el buen uso de varios conceptos javaScript:'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/night-owl.min.css">
+    <script src="js/main.js"></script>
+    <link rel='stylesheet' type='text/css' href='css/style.css' />
+    <title>Tarea UD3. Tipo examen</title>
+</head>
+
+<body>
+    <noscript>
+        <p>Bienvenido a Mi Sitio</p>
+        <p>La página que estás viendo requiere para su funcionamiento el uso de JavaScript.
+            Si lo has deshabilitado intencionadamente, por favor vuelve a activarlo.</p>
+    </noscript>
+
+</body>
+<h1>Tarea UD3. Tipo Examen</h1>
+
+<div class="exercise">
+    <h2>Ejercicio 1</h2>
+    <p>Genera las notas aleatorias de 8 alumnos y muestra la siguiente información:</p>
+    <ol>
+        <li>Nota máxima</li>
+        <li>Nota mínima</li>
+        <li>Conversión a entero</li>
+        <li>Redondeo</li>
+        <li>Cantidad de notas enteras</li>
+    </ol>
+    <section>
+        <label>Notas generadas: <span id="marks"></span></label><br><br>
+        <label>Nota máxima: <span id="span_max"></span></label><br><br>
+        <label>Nota mínima: <span id="span_min"></span></label><br><br>
+        <label>Redondeo: <span id="span_round"></span></label><br><br>
+        <label>Notas enteras: <span id="span_int"></span></label><br><br>
+        <label>Notas decimales: <span id="span_dec"></span></label><br><br>
+    </section>
+
+</div>
+
+<div class="exercise">
+    <h2>Ejercicio 2</h2>
+    <p>Introduce un número y comprueba:</p>
+    <ol>
+        <li>Si es finito.</li>
+        <li>Si es un número entero o decimal</li>
+        <li>Si es un BigInt</li>
+    </ol> 
+    <section>
+        <form>
+            <input type="text" id="number_ex2"><span id="span_ex2"></span><br><br>
+            <button type="button" id="btn_ex2">Comprobar</button><br><br>
+            <label>Es finito: <span id="span_finite"></span></label><br><br>
+            <label>Entero o decimal: <span id="span_type"></span></label><br><br>
+
+        </form>
+    </section>
+
+</div>
+
+<div class="exercise">
+    <h2>Ejercicio 3</h2>
+    <p>Introduce el nombre, apellido, email de un usuario. Muestra los siguiente:</p>
+    <ol>
+        <li>Valida los inputs.</li>
+        <li>Email encriptado. Solo los dos primeros caracteres del email y el resto con asteriscos</li>
+        <li>Pasa el nombre y el apellido a mayúsculas.</li>
+        <li>Pasa el nombre y el apellido a minúsculas.</li>
+    </ol>
+
+    <form action="post" id="form_ex2">
+        <br>
+        <label>Nombre: <input type="text" id="input_name"></label><span id="span_name"></span><br><br>
+        <label>Apellido: <input type="text" id="input_lastname"></label><span id="span_lastname"></span><br><br>
+        <label>Email: <input type="email" id="input_email"></label><span id="span_email"></span><br><br>
+        <button type="button" id="btn_check2">Comprobar</button><span id="span_msg_ex3"></span><br><br>
+    </form>
+
+    <section>
+        <label>Email encriptado: <span id="span_encrypt"></span></label><br><br>
+        <label>Todo mayúsculas: <span id="span_may"></span></label><br><br>
+        <label>Todo minúsculas: <span id="span_minu"></span></label><br><br>
+    </section>
+</div>
+
+<div class="exercise">
+    <h2>Ejercicio 4</h2>
+    <p>Realiza las siguiente acciones usando <i>localStorage</i></p>
+    <ol>
+        <li>Agrega un ítem (clave y valor).</li>
+        <li>Recupera el ítem mediante la clave.</li>
+        <li>Elimina el ítem mediante la clave.</li>
+        <li>Elimina todos los ítems.</li>
+        <li>Muestra la cantidad totasl de ítems.</li>
+        <li>Obtén todos los ítems.</li>
+    </ol>
+    <section>
+        <form>
+            <h3>Agrega un ítem</h3>
+        <label>Clave</label><br>
+        <input id="setItemKey" type="text"></input>
+    
+        <br><br>
+        <label>Valor</label><br>
+        <input id="setItemValue"  type="text"></input>
+    
+        <button type="button" id="setItemBtn">
+            Guardar
+        </button>
+        <span id="setItemSpan"></span>
+        <hr>
+
+        <br>
+        <label>1. Recuperar un ítem</label><br><br>
+        <label>Clave</label>
+        <input id="getItemKey"  type="text"></input>
+        <button type="button" id="getItemBtn">Recuperar </button>
+        <span id="getItemSpan"></span>
+    
+        <br><br>
+        <label>2. Eliminar un ítem</label><br><br>
+        <label>Clave</label>
+        <input id="removeItemKey"  type="text"></input>
+        <button type="button" id="removeItemBtn">Eliminar</button>
+        <span id="removeItemSpan"></span>
+    
+        <br><br>
+        <label>3. Eliminar todos los ítem</label><br><br>
+        <button type="button" id="clearItemsBtn">Eliminar</button>
+        <span id="clearItemsSpan"></span>
+    
+        <br><br>
+        <label>4. Cantidad de ítems</label><br><br>
+        <button type="button" id="lengthItemsBtn">Obtener</button>
+        <span id="span_ls_amount"></span>
+
+        <br><br>
+        <label>5. Todos los ítems</label><br><br>
+        <button type="button" id="btn_getItems">Obtener</button>
+        <span id="span_getItems"></span>
+        </form>
+    </section>
+
+</div>
+
+
+</html>

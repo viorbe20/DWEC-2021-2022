@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='author' content='Virginia Ordoño Bernier'>
+    <link rel='stylesheet' type='text/css' href='../css/styles_parts.css' />
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src='../js/part4.js'></script>
+    <title>Manual jQuery: Parte 4</title>
+</head>
+
+<body>
+    <h1>Parte 4: Métodos de Attributes en jQuery</h1>
+    <h2>Virginia Ordoño Bernier</h2>
+
+    <h5 class="capa">El método attr() sirve para trabajar con los atributos de los elementos de la página. Este método,
+        como
+        muchos otros en jQuery tiene diferentes usos, dependiendo de los parámetros que le pasemos, pero siempre sirve
+        para
+        trabajar con los atributos HTML, como pueden ser title, height, width, href, value, etc.</h5>
+
+    <h2>Demo 1</h2>
+    <ul class="capa">
+        <li>Lectura de atributo.</li>
+        <li>Recorrido con each para recuperar todos los valores de los atributos title de los enlaces que haya en la
+            página.</li>
+        <li>Pulsa <i>Mostrar</i> para ver un alert con la información.</li>
+        <li>Pulsa en los enlaces para ir a su página.</li>
+    </ul>
+    <a id="enlace1" href="http://www.elpais.com" title="Diario El País">El País</a>
+    <br>
+    <a href="http://www.mozilla.org" title="Fundación Mozilla">Mozilla Fundation</a>
+    <br>
+    <a href="http://es.openoffice.org/" title="Siute de programas de oficina">Open Office</a><br>
+    <br>
+    <button type="submit" id="btnDemo1">Mostrar</button>
+
+    <h2>Demo 2</h2>
+    <ul class="capa">
+        <li>Envío de una función para procesar el valor que queremos asignar a un atributo. Para ello enviamos a
+            attr() dos parámetros, el primero con el nombre del atributo y el segundo con la función que debe devolver
+            el valor a
+            asignar a dicho atributo.</li>
+        <li>En este ejemplo desde jQuery accedemos a los elementos INPUT de la
+            página que tienen la clase CSS "fecha" y le insertamos como texto a mostrar la fecha de hoy. Para obtener el
+            día actual
+            necesitamos procesar cierto código Javascript y para ello crearemos una función que devuelve la cadena de
+            texto con la
+            fecha.</li>
+    </ul>
+    <form>
+        <input type="text" class="fecha"><br>
+        <input type="text" class="nofecha"><br>
+        <input type="text" class="fecha"><br>
+    </form>
+
+    <h2>Demo 3</h2>
+    <ul class="capa">
+        <li>Pulsa el botón para poder ver el texto.</li>
+    </ul>
+    <table width="50">
+        <tr>
+            <td hola>
+            Esta celda tiene un nowrap, con lo que todo el texto se muestra en la misma línea!
+            Pero realmente la tabla mide 50 pixeles de anchura, luego tendrían que aparece varias líneas!
+            </td>
+        </tr>
+    </table>
+    <input type="Button" id="boton" value="Quitar nowrap">
+
+</body>
+
+</html>

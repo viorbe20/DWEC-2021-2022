@@ -1,0 +1,62 @@
+.capa {
+  padding: 10px;
+  background-color: #bdecb6;
+}
+
+h2 {
+  color: #2d572c;
+}
+
+.addNewColor {
+  background-color: orange;
+}
+
+li {
+  margin-left: 15px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.verde {
+  color: green;
+}
+
+body {
+  font-size: 0.75em;
+  font-family: tahoma, verdana, sans-serif;
+}
+.notar {
+  color: #339;
+}
+.mensaje {
+  margin: 20px 5px;
+}
+#capaP8D3 {
+  left: 200px;
+  top: 150px;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #3d3;
+}
+
+#capaP8D4{
+  left: 20px;
+  top: 20px;
+  position: absolute;
+  font-size: 0.75em;
+  font-family: tahoma, verdana, sans-serif;
+  width: 740px;
+  background-color: #ddf;
+  padding: 10px;
+  border: 1px solid #bbb;
+}
+
+#capaP8D5{
+  left: 100px;
+  top: 150px;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #3d3;
+}
